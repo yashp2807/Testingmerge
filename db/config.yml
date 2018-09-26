@@ -1,0 +1,28 @@
+development:
+  adapter: redshift
+  host: localhost
+  port: 5439
+  database: ingestionmetrics
+  username: admin
+  password: Innocycle123
+  encoding: utf8
+  pool: 3
+  timeout: 5000
+
+test: &test
+  adapter: redshift
+  host: platform-reboot
+  port: 5439
+  database: ingestionmetrics
+  username: admin
+  password: Innocycle123
+  encoding: utf8
+  pool: 3
+  timeout: 5000
+
+production:
+  adapter: mysql2
+  database: schema_management_prod
+  username: root
+  pool: 5
+  timeout: 5000
