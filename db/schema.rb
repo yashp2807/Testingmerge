@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180919215440) do
+ActiveRecord::Schema.define(version: 20181003152040) do
 
   create_table "act_21", id: false, force: :cascade do |t|
     t.float "asd"
@@ -5674,6 +5674,11 @@ ActiveRecord::Schema.define(version: 20180919215440) do
     t.string   "spn",          limit: 65535
   end
 
+  create_table "activity_temp", id: false, force: :cascade do |t|
+    t.string  "acon",  limit: 65535
+    t.integer "acoid"
+  end
+
   create_table "ahn_allergy_inc", id: false, force: :cascade do |t|
     t.string   "empi",            limit: 100
     t.string   "local_member_id", limit: 100
@@ -7710,6 +7715,84 @@ ActiveRecord::Schema.define(version: 20180919215440) do
     t.date   "datetime"
   end
 
+  create_table "eligibility_layout", id: false, force: :cascade do |t|
+    t.string "bef0479_alpha_trans_ind",      limit: 8
+    t.string "bef0479_enrl_cert_nbr",        limit: 9
+    t.string "bef0479_enrl_cert_sub",        limit: 1
+    t.string "bef0479_indiv_seq_nbr",        limit: 2
+    t.string "bef0479_xref_enrl_cert_nbr",   limit: 9
+    t.string "bef0479_xref_enrl_cert_sub",   limit: 1
+    t.string "bef0479_dpnt_irs_nbr",         limit: 9
+    t.string "bef0479_group_id_number",      limit: 8
+    t.string "bef0479_indiv_last_name_text", limit: 20
+    t.string "bef0479_indiv_1st_name_text",  limit: 14
+    t.string "bef0479_indiv_midl_intl_text", limit: 1
+    t.string "bef0479_indiv_qual_name_text", limit: 3
+    t.string "bef0479_indiv_address_text",   limit: 38
+    t.string "bef0479_indiv_address_text2",  limit: 30
+    t.string "bef0479_indiv_city_text",      limit: 20
+    t.string "bef0479_indiv_state_text",     limit: 2
+    t.string "bef0479_postal_loc_code",      limit: 9
+    t.string "bef0479_indiv_cntry_text",     limit: 10
+    t.string "bef0479_busn_unit_rptg_cd",    limit: 15
+    t.string "bef0479_email_id",             limit: 60
+    t.string "bef0479_grp_location_code",    limit: 3
+    t.string "bef0479_orig_work_date",       limit: 8
+    t.string "bef0479_mdcr_id",              limit: 12
+    t.string "bef0479_work_hrs_qty",         limit: 6
+    t.string "bef0479_work_status_cde",      limit: 2
+    t.string "bef0479_indiv_birth_date",     limit: 8
+    t.string "bef0479_indiv_sex_code",       limit: 1
+    t.string "bef0479_marital_status_code",  limit: 1
+    t.string "bef0479_dpnt_cur_status_cde",  limit: 2
+    t.string "bef0479_filler_1",             limit: 5
+    t.string "bef0479_empe_id_number",       limit: 12
+    t.string "bef0479_work_site_loc_cd",     limit: 15
+    t.string "bef0479_work_state_code",      limit: 2
+    t.string "bef0479_orig_hlth_bnfit_dt",   limit: 8
+    t.string "bef0479_clmt_birth_date",      limit: 8
+    t.string "bef0479_clmt_sex_cd",          limit: 1
+    t.string "bef0479_spcl_cust_txt",        limit: 15
+    t.string "bef0479_spcl_cust_txt2",       limit: 15
+    t.string "bef0479_spcl_cust_txt3",       limit: 15
+    t.string "bef0479_spcl_cust_txt4",       limit: 15
+    t.string "bef0479_spcl_cust_txt5",       limit: 15
+    t.string "bef0479_spcl_cust_txt6",       limit: 15
+    t.string "bef0479_spcl_cust_txt7",       limit: 15
+    t.string "bef0479_pol_cov_appl_ind",     limit: 1
+    t.string "bef0479_policy_id_number",     limit: 12
+    t.string "bef0479_line_desc_code",       limit: 1
+    t.string "bef0479_stat_class_code",      limit: 3
+    t.string "bef0479_oth_bnfit_amt",        limit: 9
+    t.string "bef0479_indiv_ins_eff_date",   limit: 8
+    t.string "bef0479_indiv_ins_exp_date",   limit: 8
+    t.string "bef0479_eff_change_date",      limit: 8
+    t.string "bef0479_sched_class_code",     limit: 3
+    t.string "bef0479_health_orgn_id_code",  limit: 4
+    t.string "bef0479_filler_2",             limit: 1
+    t.string "bef0479_indiv_eff_status_cde", limit: 2
+    t.string "bef0479_indiv_expir_stts_cde", limit: 2
+    t.string "bef0479_assgn_subscr_nbr",     limit: 8
+    t.string "bef0479_empe_ssn_nbr",         limit: 9
+    t.string "bef0479_id_card_value",        limit: 30
+    t.string "bef0479_print_control_code",   limit: 1
+    t.string "bef0479_dpnt_cur_status_date", limit: 8
+    t.string "bef0479_indiv_med_id_nbr",     limit: 9
+    t.string "bef0479_834_info_1",           limit: 9
+    t.string "bef0479_834_info_2",           limit: 30
+    t.string "bef0479_834_info_3",           limit: 8
+    t.string "bef0479_tpa_cd",               limit: 2
+    t.string "bef0479_secd_htlh_orgn_id",    limit: 4
+    t.string "bef0479_mdcr_prime_ind",       limit: 1
+    t.string "bef0479_mdcr_prime_bgn_dt",    limit: 8
+    t.string "bef0479_mdcr_prime_end_dt",    limit: 8
+    t.string "bef0479_phrmc_client_code",    limit: 8
+    t.string "bef0479_oth_ins_prime_ind",    limit: 1
+    t.string "bef0479_cob_ind",              limit: 1
+    t.string "bef0479_member_id",            limit: 10
+    t.string "bef0479_filler_3",             limit: 15
+  end
+
   create_table "empi_change", id: false, force: :cascade do |t|
     t.string "old_empi",             limit: 1000
     t.string "new_empi",             limit: 1000
@@ -7754,6 +7837,179 @@ ActiveRecord::Schema.define(version: 20180919215440) do
   create_table "example_table", force: :cascade do |t|
     t.string  "name",   limit: 256
     t.integer "number"
+  end
+
+  create_table "fwms_demographics", id: false, force: :cascade do |t|
+    t.string "responsible party date of birth",          limit: 256
+    t.string "patient full address",                     limit: 256
+    t.string "patient ssn",                              limit: 256
+    t.string "patient deceased",                         limit: 256
+    t.string "patient employer name",                    limit: 256
+    t.string "patient release of information",           limit: 256
+    t.string "leave message home type",                  limit: 256
+    t.string "patient state",                            limit: 256
+    t.string "patient email",                            limit: 256
+    t.string "responsible party account number",         limit: 256
+    t.string "patient age group",                        limit: 256
+    t.string "patient zip code",                         limit: 256
+    t.string "patient demographic don't send statement", limit: 256
+    t.string "patient student status",                   limit: 256
+    t.string "patient email not provided reason",        limit: 256
+    t.string "leave message work",                       limit: 256
+    t.string "patient characteristic",                   limit: 256
+    t.string "patient web-enabled status",               limit: 256
+    t.string "patient address line1",                    limit: 256
+    t.string "leave message home",                       limit: 256
+    t.string "patient city",                             limit: 256
+    t.string "patient address line2",                    limit: 256
+    t.string "responsible party state",                  limit: 256
+    t.string "patient age",                              limit: 256
+    t.string "patient cell number",                      limit: 256
+    t.string "responsible party ssn",                    limit: 256
+    t.string "patient previous name",                    limit: 256
+    t.string "responsible party name",                   limit: 256
+    t.string "patient full name (first name first)",     limit: 256
+    t.string "responsible party zip code",               limit: 256
+    t.string "patient work phone number",                limit: 256
+    t.string "patient name",                             limit: 256
+    t.string "patient middle initial",                   limit: 256
+    t.string "patient signature date",                   limit: 256
+    t.string "default lab company",                      limit: 256
+    t.string "patient status",                           limit: 256
+    t.string "responsible party address line1",          limit: 256
+    t.string "patient registry enabled",                 limit: 256
+    t.string "web enabled",                              limit: 256
+    t.string "rx history consent",                       limit: 256
+    t.string "patient primary pharmacy is mail order",   limit: 256
+    t.string "patient misc info",                        limit: 256
+    t.string "patient demographic pharmacy is primary",  limit: 256
+    t.string "responsible party address line2",          limit: 256
+    t.string "deceased date",                            limit: 256
+    t.string "vfc eligibility",                          limit: 256
+    t.string "patient last name",                        limit: 256
+    t.string "patient language",                         limit: 256
+    t.string "voice enabled",                            limit: 256
+    t.string "responsible party city",                   limit: 256
+    t.string "plan type",                                limit: 256
+    t.string "patient employer phone number",            limit: 256
+    t.string "patient prefix",                           limit: 256
+    t.string "text enabled",                             limit: 256
+    t.string "requires translator",                      limit: 256
+    t.string "residence type name",                      limit: 256
+    t.string "patient employer address 2",               limit: 256
+    t.string "release of info",                          limit: 256
+    t.string "responsible party phone number",           limit: 256
+    t.string "patient account number",                   limit: 256
+    t.string "patient mrn",                              limit: 256
+    t.string "patient demographic primary pharmacy id",  limit: 256
+    t.string "patient primary pharmacy name",            limit: 256
+    t.string "leave message cell type",                  limit: 256
+    t.string "residence type code",                      limit: 256
+    t.string "patient employer state",                   limit: 256
+    t.string "patient race",                             limit: 256
+    t.string "patient transgender status",               limit: 256
+    t.string "patient exact age",                        limit: 256
+    t.string "patient employer zipcode",                 limit: 256
+    t.string "patient id",                               limit: 256
+    t.string "responsible party employer name",          limit: 256
+    t.string "leave message cell",                       limit: 256
+    t.string "default di company",                       limit: 256
+    t.string "responsible party full address",           limit: 256
+    t.string "patient suffix",                           limit: 256
+    t.string "patient fee schedule name",                limit: 256
+    t.string "patient gender",                           limit: 256
+    t.string "patient marital status",                   limit: 256
+    t.string "patient ethnicity",                        limit: 256
+    t.string "primary service location id",              limit: 256
+    t.string "patient first name",                       limit: 256
+    t.string "patient employer address",                 limit: 256
+    t.string "leave message work type",                  limit: 256
+    t.string "patient date of birth",                    limit: 256
+    t.string "patient email provided",                   limit: 256
+    t.string "patient phone number",                     limit: 256
+    t.string "registry exclude flag",                    limit: 256
+    t.string "patient misc value",                       limit: 256
+    t.string "primary service location",                 limit: 256
+    t.string "patient employer city",                    limit: 256
+    t.string "transgender",                              limit: 256
+  end
+
+  create_table "hatest", id: false, force: :cascade do |t|
+    t.string "bef0479_alpha_trans_ind",      limit: 8
+    t.string "bef0479_enrl_cert_nbr",        limit: 9
+    t.string "bef0479_enrl_cert_sub",        limit: 1
+    t.string "bef0479_indiv_seq_nbr",        limit: 2
+    t.string "bef0479_xref_enrl_cert_nbr",   limit: 9
+    t.string "bef0479_xref_enrl_cert_sub",   limit: 1
+    t.string "bef0479_dpnt_irs_nbr",         limit: 9
+    t.string "bef0479_group_id_number",      limit: 8
+    t.string "bef0479_indiv_last_name_text", limit: 20
+    t.string "bef0479_indiv_1st_name_text",  limit: 14
+    t.string "bef0479_indiv_midl_intl_text", limit: 1
+    t.string "bef0479_indiv_qual_name_text", limit: 3
+    t.string "bef0479_indiv_address_text",   limit: 38
+    t.string "bef0479_indiv_address_text2",  limit: 30
+    t.string "bef0479_indiv_city_text",      limit: 20
+    t.string "bef0479_indiv_state_text",     limit: 2
+    t.string "bef0479_postal_loc_code",      limit: 9
+    t.string "bef0479_indiv_cntry_text",     limit: 10
+    t.string "bef0479_busn_unit_rptg_cd",    limit: 15
+    t.string "bef0479_email_id",             limit: 60
+    t.string "bef0479_grp_location_code",    limit: 3
+    t.string "bef0479_orig_work_date",       limit: 8
+    t.string "bef0479_mdcr_id",              limit: 12
+    t.string "bef0479_work_hrs_qty",         limit: 6
+    t.string "bef0479_work_status_cde",      limit: 2
+    t.string "bef0479_indiv_birth_date",     limit: 8
+    t.string "bef0479_indiv_sex_code",       limit: 1
+    t.string "bef0479_marital_status_code",  limit: 1
+    t.string "bef0479_dpnt_cur_status_cde",  limit: 2
+    t.string "bef0479_filler_1",             limit: 5
+    t.string "bef0479_empe_id_number",       limit: 12
+    t.string "bef0479_work_site_loc_cd",     limit: 15
+    t.string "bef0479_work_state_code",      limit: 2
+    t.string "bef0479_orig_hlth_bnfit_dt",   limit: 8
+    t.string "bef0479_clmt_birth_date",      limit: 8
+    t.string "bef0479_clmt_sex_cd",          limit: 1
+    t.string "bef0479_spcl_cust_txt",        limit: 15
+    t.string "bef0479_spcl_cust_txt2",       limit: 15
+    t.string "bef0479_spcl_cust_txt3",       limit: 15
+    t.string "bef0479_spcl_cust_txt4",       limit: 15
+    t.string "bef0479_spcl_cust_txt5",       limit: 15
+    t.string "bef0479_spcl_cust_txt6",       limit: 15
+    t.string "bef0479_spcl_cust_txt7",       limit: 15
+    t.string "bef0479_pol_cov_appl_ind",     limit: 1
+    t.string "bef0479_policy_id_number",     limit: 12
+    t.string "bef0479_line_desc_code",       limit: 1
+    t.string "bef0479_stat_class_code",      limit: 3
+    t.string "bef0479_oth_bnfit_amt",        limit: 9
+    t.string "bef0479_indiv_ins_eff_date",   limit: 8
+    t.string "bef0479_indiv_ins_exp_date",   limit: 8
+    t.string "bef0479_eff_change_date",      limit: 8
+    t.string "bef0479_sched_class_code",     limit: 3
+    t.string "bef0479_health_orgn_id_code",  limit: 4
+    t.string "bef0479_filler_2",             limit: 1
+    t.string "bef0479_indiv_eff_status_cde", limit: 2
+    t.string "bef0479_indiv_expir_stts_cde", limit: 2
+    t.string "bef0479_assgn_subscr_nbr",     limit: 8
+    t.string "bef0479_empe_ssn_nbr",         limit: 9
+    t.string "bef0479_id_card_value",        limit: 30
+    t.string "bef0479_print_control_code",   limit: 1
+    t.string "bef0479_dpnt_cur_status_date", limit: 8
+    t.string "bef0479_indiv_med_id_nbr",     limit: 9
+    t.string "bef0479_834_info_1",           limit: 9
+    t.string "bef0479_834_info_2",           limit: 30
+    t.string "bef0479_834_info_3",           limit: 8
+    t.string "bef0479_tpa_cd",               limit: 2
+    t.string "bef0479_secd_htlh_orgn_id",    limit: 4
+    t.string "bef0479_mdcr_prime_ind",       limit: 1
+    t.string "bef0479_mdcr_prime_bgn_dt",    limit: 8
+    t.string "bef0479_mdcr_prime_end_dt",    limit: 8
+    t.string "bef0479_phrmc_client_code",    limit: 8
+    t.string "bef0479_oth_ins_prime_ind",    limit: 1
+    t.string "bef0479_cob_ind",              limit: 1
+    t.string "bef0479_member_id",            limit: 10
+    t.string "bef0479_filler_3",             limit: 15
   end
 
   create_table "hello1", id: false, force: :cascade do |t|
@@ -9415,6 +9671,32 @@ ActiveRecord::Schema.define(version: 20180919215440) do
     t.string "start_date",         limit: 500
     t.string "enc_id",             limit: 500
     t.string "provider_id",        limit: 500
+  end
+
+  create_table "member", force: :cascade do |t|
+    t.string   "empi",                     limit: 256
+    t.string   "local_member_id",          limit: 256
+    t.string   "first_name",               limit: 256
+    t.string   "middle_name",              limit: 256
+    t.string   "last_name",                limit: 256
+    t.string   "full_name",                limit: 256
+    t.string   "prefix",                   limit: 256
+    t.string   "suffix",                   limit: 256
+    t.string   "gender",                   limit: 256
+    t.string   "ethnicity",                limit: 256
+    t.string   "race",                     limit: 256
+    t.string   "marital_status",           limit: 256
+    t.string   "primary_language",         limit: 256
+    t.string   "cms_status",               limit: 256
+    t.string   "reason_entitlement",       limit: 256
+    t.string   "buy_in",                   limit: 256
+    t.string   "author_name",              limit: 256
+    t.date     "birth_date"
+    t.date     "deceased_date"
+    t.date     "hospice_enrollment_date"
+    t.date     "hospice_termination_date"
+    t.datetime "author_date"
+    t.integer  "author_id"
   end
 
   create_table "member_add_bharat", id: false, force: :cascade do |t|
@@ -11370,6 +11652,499 @@ ActiveRecord::Schema.define(version: 20180919215440) do
     t.string "awpamount",                limit: 400
   end
 
+  create_table "sp_member", id: false, force: :cascade do |t|
+    t.string "local_member_id",          limit: 255
+    t.string "first_name",               limit: 255
+    t.string "middle_name",              limit: 255
+    t.string "last_name",                limit: 255
+    t.string "full_name",                limit: 255
+    t.string "prefix",                   limit: 255
+    t.string "suffix",                   limit: 255
+    t.string "gender",                   limit: 255
+    t.string "ethnicity",                limit: 255
+    t.string "race",                     limit: 255
+    t.string "marital_status",           limit: 255
+    t.string "primary_language",         limit: 255
+    t.string "cms_status",               limit: 255
+    t.string "source_id",                limit: 255
+    t.string "source_name",              limit: 255
+    t.string "source_type",              limit: 255
+    t.string "workflow_id",              limit: 255
+    t.string "author",                   limit: 255
+    t.string "ingestion_datetime",       limit: 255
+    t.string "vendor_version",           limit: 255
+    t.string "vendor_name",              limit: 255
+    t.string "aco_id",                   limit: 255
+    t.string "aco_name",                 limit: 255
+    t.string "sno",                      limit: 255
+    t.string "birth_date",               limit: 255
+    t.string "deceased_date",            limit: 255
+    t.string "hospice_enrollment_date",  limit: 255
+    t.string "hospice_termination_date", limit: 255
+  end
+
+  create_table "sp_member_roaster", id: false, force: :cascade do |t|
+    t.string "z_empi", limit: 255
+    t.string "id",     limit: 255
+    t.string "fn",     limit: 255
+    t.string "ln",     limit: 255
+    t.string "mn",     limit: 255
+    t.date   "dob"
+    t.string "gn",     limit: 255
+    t.string "idt",    limit: 255
+    t.string "tel1",   limit: 255
+    t.string "psa1",   limit: 255
+    t.string "psa2",   limit: 255
+    t.string "pz",     limit: 255
+    t.string "pcpnpi", limit: 255
+    t.string "pcptid", limit: 255
+    t.string "pcpfn",  limit: 255
+    t.string "pcpln",  limit: 255
+    t.string "atrsd",  limit: 255
+    t.string "atred",  limit: 255
+    t.string "empi",   limit: 255
+  end
+
+  create_table "staging_20180926_153921", id: false, force: :cascade do |t|
+    t.string "empi",                     limit: 255
+    t.string "local_member_id",          limit: 255
+    t.string "first_name",               limit: 255
+    t.string "middle_name",              limit: 255
+    t.string "last_name",                limit: 255
+    t.string "full_name",                limit: 255
+    t.string "prefix",                   limit: 255
+    t.string "suffix",                   limit: 255
+    t.date   "birth_date"
+    t.date   "deceased_date"
+    t.string "gender",                   limit: 255
+    t.string "ethnicity",                limit: 255
+    t.string "race",                     limit: 255
+    t.string "marital_status",           limit: 255
+    t.string "primary_language",         limit: 255
+    t.string "cms_status",               limit: 255
+    t.date   "hospice_enrollment_date"
+    t.date   "hospice_termination_date"
+    t.string "source_id",                limit: 255
+    t.string "source_name",              limit: 255
+    t.string "source_type",              limit: 255
+    t.string "workflow_id",              limit: 255
+    t.string "author",                   limit: 255
+    t.string "ingestion_datetime",       limit: 255
+    t.string "vendor_version",           limit: 255
+    t.string "vendor_name",              limit: 255
+    t.string "aco_id",                   limit: 255
+    t.string "aco_name",                 limit: 255
+    t.string "sno",                      limit: 255
+  end
+
+  create_table "staging_20180926_154417", id: false, force: :cascade do |t|
+    t.string "empi",                     limit: 255
+    t.string "local_member_id",          limit: 255
+    t.string "first_name",               limit: 255
+    t.string "middle_name",              limit: 255
+    t.string "last_name",                limit: 255
+    t.string "full_name",                limit: 255
+    t.string "prefix",                   limit: 255
+    t.string "suffix",                   limit: 255
+    t.date   "birth_date"
+    t.date   "deceased_date"
+    t.string "gender",                   limit: 255
+    t.string "ethnicity",                limit: 255
+    t.string "race",                     limit: 255
+    t.string "marital_status",           limit: 255
+    t.string "primary_language",         limit: 255
+    t.string "cms_status",               limit: 255
+    t.date   "hospice_enrollment_date"
+    t.date   "hospice_termination_date"
+    t.string "source_id",                limit: 255
+    t.string "source_name",              limit: 255
+    t.string "source_type",              limit: 255
+    t.string "workflow_id",              limit: 255
+    t.string "author",                   limit: 255
+    t.string "ingestion_datetime",       limit: 255
+    t.string "vendor_version",           limit: 255
+    t.string "vendor_name",              limit: 255
+    t.string "aco_id",                   limit: 255
+    t.string "aco_name",                 limit: 255
+    t.string "sno",                      limit: 255
+  end
+
+  create_table "staging_20180928_124948", id: false, force: :cascade do |t|
+    t.string "empi", limit: 65535
+    t.string "fn",   limit: 65535
+    t.string "ln",   limit: 65535
+    t.date   "dob"
+    t.string "gn",   limit: 65535
+    t.string "id",   limit: 65535
+    t.string "mn",   limit: 65535
+  end
+
+  create_table "staging_20180928_125218", id: false, force: :cascade do |t|
+    t.string "empi", limit: 65535
+    t.string "fn",   limit: 65535
+    t.string "ln",   limit: 65535
+    t.date   "dob"
+    t.string "gn",   limit: 65535
+    t.string "id",   limit: 65535
+    t.string "mn",   limit: 65535
+  end
+
+  create_table "staging_20180928_125808", id: false, force: :cascade do |t|
+    t.string "empi", limit: 65535
+    t.string "fn",   limit: 65535
+    t.string "ln",   limit: 65535
+    t.date   "dob"
+    t.string "gn",   limit: 65535
+    t.string "id",   limit: 65535
+    t.string "mn",   limit: 65535
+  end
+
+  create_table "staging_20180928_130055", id: false, force: :cascade do |t|
+    t.string "empi", limit: 65535
+    t.string "fn",   limit: 65535
+    t.string "ln",   limit: 65535
+    t.date   "dob"
+    t.string "gn",   limit: 65535
+    t.string "id",   limit: 65535
+    t.string "mn",   limit: 65535
+  end
+
+  create_table "staging_20180928_130930", id: false, force: :cascade do |t|
+    t.string "empi",            limit: 65535
+    t.string "first_name",      limit: 65535
+    t.string "last_name",       limit: 65535
+    t.date   "birth_date"
+    t.string "gender",          limit: 65535
+    t.string "local_member_id", limit: 65535
+    t.string "middle_name",     limit: 65535
+  end
+
+  create_table "staging_20180928_133627", id: false, force: :cascade do |t|
+    t.string "empi",            limit: 65535
+    t.string "local_member_id", limit: 65535
+    t.string "first_name",      limit: 65535
+    t.string "middle_name",     limit: 65535
+    t.string "last_name",       limit: 65535
+    t.string "?column?",        limit: 1
+    t.string "?column?1",       limit: 1
+    t.string "?column?2",       limit: 1
+    t.date   "birth_date"
+    t.string "?column?3",       limit: 1
+    t.string "gender",          limit: 65535
+    t.string "?column?4",       limit: 1
+    t.string "?column?5",       limit: 1
+    t.string "?column?6",       limit: 1
+    t.string "?column?7",       limit: 1
+    t.string "?column?8",       limit: 1
+    t.string "?column?9",       limit: 1
+    t.string "?column?10",      limit: 1
+    t.string "?column?11",      limit: 1
+    t.string "?column?12",      limit: 1
+    t.string "?column?13",      limit: 1
+    t.string "?column?14",      limit: 1
+    t.string "?column?15",      limit: 1
+    t.string "?column?16",      limit: 1
+    t.string "?column?17",      limit: 1
+    t.string "?column?18",      limit: 1
+    t.string "?column?19",      limit: 1
+    t.string "?column?20",      limit: 1
+    t.string "?column?21",      limit: 1
+    t.string "?column?22",      limit: 1
+    t.string "?column?23",      limit: 1
+    t.string "?column?24",      limit: 1
+    t.string "?column?25",      limit: 1
+    t.string "?column?26",      limit: 1
+    t.string "?column?27",      limit: 1
+  end
+
+  create_table "staging_20180928_135451", id: false, force: :cascade do |t|
+    t.string   "empi",                     limit: 65535
+    t.string   "local_member_id",          limit: 65535
+    t.string   "first_name",               limit: 65535
+    t.string   "middle_name",              limit: 65535
+    t.string   "last_name",                limit: 65535
+    t.string   "full_name",                limit: 1
+    t.string   "prefix",                   limit: 1
+    t.string   "suffix",                   limit: 1
+    t.date     "birth_date"
+    t.date     "deceased_date"
+    t.string   "gender",                   limit: 65535
+    t.string   "ethnicity",                limit: 1
+    t.string   "race",                     limit: 1
+    t.string   "marital_status",           limit: 1
+    t.string   "primary_language",         limit: 1
+    t.string   "cms_status",               limit: 1
+    t.date     "hospice_enrollment_date"
+    t.date     "hospice_termination_date"
+    t.string   "reason_entitlement",       limit: 1
+    t.string   "buy_in",                   limit: 1
+    t.datetime "author_date"
+    t.integer  "author_id"
+    t.string   "author_name",              limit: 1
+    t.integer  "source_id"
+    t.string   "source_name",              limit: 1
+    t.string   "source_type",              limit: 1
+    t.string   "workspace_id",             limit: 1
+    t.string   "workflow_id",              limit: 1
+    t.string   "author",                   limit: 1
+    t.string   "ingestion_datetime",       limit: 1
+    t.string   "vendor_version",           limit: 1
+    t.string   "vendor_name",              limit: 1
+    t.string   "aco_id",                   limit: 1
+    t.string   "aco_name",                 limit: 1
+    t.string   "source_file_name",         limit: 1
+  end
+
+  create_table "staging_20180928_143523", id: false, force: :cascade do |t|
+    t.string   "empi",                     limit: 65535
+    t.string   "local_member_id",          limit: 65535
+    t.string   "first_name",               limit: 65535
+    t.string   "middle_name",              limit: 65535
+    t.string   "last_name",                limit: 65535
+    t.string   "full_name",                limit: 1
+    t.string   "prefix",                   limit: 1
+    t.string   "suffix",                   limit: 1
+    t.date     "birth_date"
+    t.date     "deceased_date"
+    t.string   "gender",                   limit: 65535
+    t.string   "ethnicity",                limit: 1
+    t.string   "race",                     limit: 1
+    t.string   "marital_status",           limit: 1
+    t.string   "primary_language",         limit: 1
+    t.string   "cms_status",               limit: 1
+    t.date     "hospice_enrollment_date"
+    t.date     "hospice_termination_date"
+    t.string   "reason_entitlement",       limit: 1
+    t.string   "buy_in",                   limit: 1
+    t.datetime "author_date"
+    t.integer  "author_id"
+    t.string   "author_name",              limit: 1
+    t.integer  "source_id"
+    t.string   "source_name",              limit: 1
+    t.string   "source_type",              limit: 1
+    t.string   "workspace_id",             limit: 1
+    t.string   "workflow_id",              limit: 1
+    t.string   "author",                   limit: 1
+    t.string   "ingestion_datetime",       limit: 1
+    t.string   "vendor_version",           limit: 1
+    t.string   "vendor_name",              limit: 1
+    t.string   "aco_id",                   limit: 1
+    t.string   "aco_name",                 limit: 1
+    t.string   "source_file_name",         limit: 1
+  end
+
+  create_table "staging_20180928_144930", id: false, force: :cascade do |t|
+    t.string   "empi",                     limit: 65535
+    t.string   "local_member_id",          limit: 65535
+    t.string   "first_name",               limit: 65535
+    t.string   "middle_name",              limit: 65535
+    t.string   "last_name",                limit: 65535
+    t.string   "full_name",                limit: 1
+    t.string   "prefix",                   limit: 1
+    t.string   "suffix",                   limit: 1
+    t.date     "birth_date"
+    t.date     "deceased_date"
+    t.string   "gender",                   limit: 65535
+    t.string   "ethnicity",                limit: 1
+    t.string   "race",                     limit: 1
+    t.string   "marital_status",           limit: 1
+    t.string   "primary_language",         limit: 1
+    t.string   "cms_status",               limit: 1
+    t.date     "hospice_enrollment_date"
+    t.date     "hospice_termination_date"
+    t.string   "reason_entitlement",       limit: 1
+    t.string   "buy_in",                   limit: 1
+    t.datetime "author_date"
+    t.integer  "author_id"
+    t.string   "author_name",              limit: 1
+    t.integer  "source_id"
+    t.string   "source_name",              limit: 1
+    t.string   "source_type",              limit: 1
+    t.string   "workspace_id",             limit: 1
+    t.string   "workflow_id",              limit: 1
+    t.string   "author",                   limit: 1
+    t.string   "ingestion_datetime",       limit: 1
+    t.string   "vendor_version",           limit: 1
+    t.string   "vendor_name",              limit: 1
+    t.string   "aco_id",                   limit: 1
+    t.string   "aco_name",                 limit: 1
+    t.string   "source_file_name",         limit: 1
+  end
+
+  create_table "staging_20180928_162419", id: false, force: :cascade do |t|
+    t.string   "empi",                 limit: 65535
+    t.string   "alternate_patient_id", limit: 256
+    t.string   "alternate_id_type",    limit: 255
+    t.date     "birth_date"
+    t.datetime "author_date"
+    t.integer  "author_id"
+    t.string   "author_name",          limit: 1
+    t.integer  "source_id"
+    t.string   "source_name",          limit: 1
+    t.string   "source_type",          limit: 1
+    t.string   "workspace_id",         limit: 1
+    t.string   "workflow_id",          limit: 1
+    t.string   "author",               limit: 1
+    t.string   "ingestion_datetime",   limit: 1
+    t.string   "vendor_version",       limit: 1
+    t.string   "vendor_name",          limit: 1
+    t.string   "aco_id",               limit: 1
+    t.string   "aco_name",             limit: 1
+    t.string   "source_file_name",     limit: 1
+  end
+
+  create_table "staging_20180928_162732", id: false, force: :cascade do |t|
+    t.string   "empi",               limit: 65535
+    t.string   "local_member_id",    limit: 256
+    t.string   "address_type",       limit: 255
+    t.string   "address_preference", limit: 255
+    t.string   "full_address",       limit: 255
+    t.string   "street_address_1",   limit: 65535
+    t.string   "street_address_2",   limit: 1
+    t.string   "street_address_3",   limit: 255
+    t.string   "zip_5",              limit: 255
+    t.bigint   "zip_full"
+    t.string   "city",               limit: 255
+    t.string   "state",              limit: 255
+    t.string   "country",            limit: 255
+    t.date     "birth_date"
+    t.datetime "author_date"
+    t.integer  "author_id"
+    t.string   "author_name",        limit: 1
+    t.integer  "source_id"
+    t.string   "source_name",        limit: 1
+    t.string   "source_type",        limit: 1
+    t.string   "workspace_id",       limit: 1
+    t.string   "workflow_id",        limit: 1
+    t.string   "author",             limit: 1
+    t.string   "ingestion_datetime", limit: 1
+    t.string   "vendor_version",     limit: 1
+    t.string   "vendor_name",        limit: 1
+    t.string   "aco_id",             limit: 1
+    t.string   "aco_name",           limit: 1
+    t.string   "source_file_name",   limit: 1
+  end
+
+  create_table "staging_20180928_163047", id: false, force: :cascade do |t|
+    t.string   "empi",                         limit: 65535
+    t.string   "local_member_id",              limit: 256
+    t.integer  "month_year"
+    t.string   "attribution_method",           limit: 255
+    t.integer  "attribution_logic_stage"
+    t.integer  "payer_id"
+    t.string   "payer_name",                   limit: 255
+    t.integer  "plan_id"
+    t.string   "plan_name",                    limit: 255
+    t.integer  "hierarchy_id"
+    t.date     "attribution_start_date"
+    t.date     "attribution_end_date"
+    t.string   "rx_coverage",                  limit: 255
+    t.string   "dental_coverage",              limit: 255
+    t.string   "hospice_benefit",              limit: 255
+    t.string   "mh_inpatient_benefit",         limit: 255
+    t.string   "mh_intensive_op_benefit",      limit: 255
+    t.string   "cd_inpatient_benefit",         limit: 255
+    t.string   "cd_outpatient_ed_benefit",     limit: 255
+    t.string   "lti_benefit",                  limit: 255
+    t.string   "cd_intensive_op_benefit",      limit: 255
+    t.string   "hospice_benefit_flag",         limit: 255
+    t.string   "subscriber_name",              limit: 255
+    t.string   "subscriber_relationship_code", limit: 255
+    t.string   "subscriber_relationship",      limit: 255
+    t.string   "insurance_class",              limit: 255
+    t.string   "eligibility_type",             limit: 255
+    t.datetime "author_date"
+    t.integer  "author_id"
+    t.string   "author_name",                  limit: 1
+    t.integer  "source_id"
+    t.string   "source_name",                  limit: 1
+    t.string   "source_type",                  limit: 1
+    t.string   "workspace_id",                 limit: 1
+    t.string   "workflow_id",                  limit: 1
+    t.string   "author",                       limit: 1
+    t.string   "ingestion_datetime",           limit: 1
+    t.string   "vendor_version",               limit: 1
+    t.string   "vendor_name",                  limit: 1
+    t.string   "aco_id",                       limit: 1
+    t.string   "aco_name",                     limit: 1
+    t.string   "source_file_name",             limit: 1
+  end
+
+  create_table "staging_20180930_101648", id: false, force: :cascade do |t|
+    t.string "provider_name",           limit: 513
+    t.string "provider_npi",            limit: 256
+    t.string "custom_level1_id",        limit: 256
+    t.string "provider_speciality",     limit: 256
+    t.string "city_name",               limit: 256
+    t.string "state_id",                limit: 256
+    t.string "pcp_flag",                limit: 256
+    t.string "custom_level2_id",        limit: 256
+    t.string "practice_name",           limit: 256
+    t.string "practice_npi",            limit: 256
+    t.string "preferred_practice_flag", limit: 256
+    t.string "provider_start_date",     limit: 256
+    t.string "provider_end_date",       limit: 256
+    t.string "org_tax_id",              limit: 256
+    t.string "org_id",                  limit: 256
+    t.string "org_name",                limit: 256
+    t.string "region_id",               limit: 256
+    t.string "region_name",             limit: 256
+    t.string "aco_id",                  limit: 256
+    t.string "aco_name",                limit: 256
+    t.string "provider_type",           limit: 256
+    t.string "hierarchy_path_id",       limit: 1284
+  end
+
+  create_table "staging_20180930_102046", id: false, force: :cascade do |t|
+    t.string "provider_name",           limit: 513
+    t.string "provider_npi",            limit: 256
+    t.string "custom_level1_id",        limit: 256
+    t.string "provider_speciality",     limit: 256
+    t.string "city_name",               limit: 256
+    t.string "state_id",                limit: 256
+    t.string "pcp_flag",                limit: 256
+    t.string "custom_level2_id",        limit: 256
+    t.string "practice_name",           limit: 256
+    t.string "practice_npi",            limit: 256
+    t.string "preferred_practice_flag", limit: 256
+    t.string "provider_start_date",     limit: 256
+    t.string "provider_end_date",       limit: 256
+    t.string "org_tax_id",              limit: 256
+    t.string "org_id",                  limit: 256
+    t.string "org_name",                limit: 256
+    t.string "region_id",               limit: 256
+    t.string "region_name",             limit: 256
+    t.string "aco_id",                  limit: 256
+    t.string "aco_name",                limit: 256
+    t.string "provider_type",           limit: 256
+    t.string "hierarchy_path_id",       limit: 1284
+  end
+
+  create_table "staging_20180930_103219", id: false, force: :cascade do |t|
+    t.string "provider_name",           limit: 513
+    t.string "provider_npi",            limit: 256
+    t.string "custom_level1_id",        limit: 256
+    t.string "provider_speciality",     limit: 256
+    t.string "city_name",               limit: 256
+    t.string "state_id",                limit: 256
+    t.string "pcp_flag",                limit: 256
+    t.string "custom_level2_id",        limit: 256
+    t.string "practice_name",           limit: 256
+    t.string "practice_npi",            limit: 256
+    t.string "preferred_practice_flag", limit: 256
+    t.string "provider_start_date",     limit: 256
+    t.string "provider_end_date",       limit: 256
+    t.string "org_tax_id",              limit: 256
+    t.string "org_id",                  limit: 256
+    t.string "org_name",                limit: 256
+    t.string "region_id",               limit: 256
+    t.string "region_name",             limit: 256
+    t.string "aco_id",                  limit: 256
+    t.string "aco_name",                limit: 256
+    t.string "provider_type",           limit: 256
+    t.string "hierarchy_path_id",       limit: 1284
+  end
+
   create_table "t1", id: false, force: :cascade do |t|
     t.string "asdfghjklqwertyuiopzxcvbnmqwertyuiop", limit: 256
   end
@@ -11437,16 +12212,6 @@ ActiveRecord::Schema.define(version: 20180919215440) do
 
   create_table "test", primary_key: "b", force: :cascade do |t|
     t.integer "a"
-  end
-
-  create_table "test1", id: false, force: :cascade do |t|
-    t.string "code",     limit: 256
-    t.string "industry", limit: 256
-  end
-
-  create_table "test2", id: false, force: :cascade do |t|
-    t.string "code",     limit: 256
-    t.string "industry", limit: 256
   end
 
   create_table "test3", id: false, force: :cascade do |t|
@@ -11904,6 +12669,252 @@ ActiveRecord::Schema.define(version: 20180919215440) do
     t.string "biv0091_memo_info_text1",       limit: 108
   end
 
+  create_table "testhaha", id: false, force: :cascade do |t|
+    t.string "bef0479_alpha_trans_ind",      limit: 8
+    t.string "bef0479_enrl_cert_nbr",        limit: 9
+    t.string "bef0479_enrl_cert_sub",        limit: 1
+    t.string "bef0479_indiv_seq_nbr",        limit: 2
+    t.string "bef0479_xref_enrl_cert_nbr",   limit: 9
+    t.string "bef0479_xref_enrl_cert_sub",   limit: 1
+    t.string "bef0479_dpnt_irs_nbr",         limit: 9
+    t.string "bef0479_group_id_number",      limit: 8
+    t.string "bef0479_indiv_last_name_text", limit: 20
+    t.string "bef0479_indiv_1st_name_text",  limit: 14
+    t.string "bef0479_indiv_midl_intl_text", limit: 1
+    t.string "bef0479_indiv_qual_name_text", limit: 3
+    t.string "bef0479_indiv_address_text",   limit: 38
+    t.string "bef0479_indiv_address_text2",  limit: 30
+    t.string "bef0479_indiv_city_text",      limit: 20
+    t.string "bef0479_indiv_state_text",     limit: 2
+    t.string "bef0479_postal_loc_code",      limit: 9
+    t.string "bef0479_indiv_cntry_text",     limit: 10
+    t.string "bef0479_busn_unit_rptg_cd",    limit: 15
+    t.string "bef0479_email_id",             limit: 60
+    t.string "bef0479_grp_location_code",    limit: 3
+    t.string "bef0479_orig_work_date",       limit: 8
+    t.string "bef0479_mdcr_id",              limit: 12
+    t.string "bef0479_work_hrs_qty",         limit: 6
+    t.string "bef0479_work_status_cde",      limit: 2
+    t.string "bef0479_indiv_birth_date",     limit: 8
+    t.string "bef0479_indiv_sex_code",       limit: 1
+    t.string "bef0479_marital_status_code",  limit: 1
+    t.string "bef0479_dpnt_cur_status_cde",  limit: 2
+    t.string "bef0479_filler_1",             limit: 5
+    t.string "bef0479_empe_id_number",       limit: 12
+    t.string "bef0479_work_site_loc_cd",     limit: 15
+    t.string "bef0479_work_state_code",      limit: 2
+    t.string "bef0479_orig_hlth_bnfit_dt",   limit: 8
+    t.string "bef0479_clmt_birth_date",      limit: 8
+    t.string "bef0479_clmt_sex_cd",          limit: 1
+    t.string "bef0479_spcl_cust_txt",        limit: 15
+    t.string "bef0479_spcl_cust_txt2",       limit: 15
+    t.string "bef0479_spcl_cust_txt3",       limit: 15
+    t.string "bef0479_spcl_cust_txt4",       limit: 15
+    t.string "bef0479_spcl_cust_txt5",       limit: 15
+    t.string "bef0479_spcl_cust_txt6",       limit: 15
+    t.string "bef0479_spcl_cust_txt7",       limit: 15
+    t.string "bef0479_pol_cov_appl_ind",     limit: 1
+    t.string "bef0479_policy_id_number",     limit: 12
+    t.string "bef0479_line_desc_code",       limit: 1
+    t.string "bef0479_stat_class_code",      limit: 3
+    t.string "bef0479_oth_bnfit_amt",        limit: 9
+    t.string "bef0479_indiv_ins_eff_date",   limit: 8
+    t.string "bef0479_indiv_ins_exp_date",   limit: 8
+    t.string "bef0479_eff_change_date",      limit: 8
+    t.string "bef0479_sched_class_code",     limit: 3
+    t.string "bef0479_health_orgn_id_code",  limit: 4
+    t.string "bef0479_filler_2",             limit: 1
+    t.string "bef0479_indiv_eff_status_cde", limit: 2
+    t.string "bef0479_indiv_expir_stts_cde", limit: 2
+    t.string "bef0479_assgn_subscr_nbr",     limit: 8
+    t.string "bef0479_empe_ssn_nbr",         limit: 9
+    t.string "bef0479_id_card_value",        limit: 30
+    t.string "bef0479_print_control_code",   limit: 1
+    t.string "bef0479_dpnt_cur_status_date", limit: 8
+    t.string "bef0479_indiv_med_id_nbr",     limit: 9
+    t.string "bef0479_834_info_1",           limit: 9
+    t.string "bef0479_834_info_2",           limit: 30
+    t.string "bef0479_834_info_3",           limit: 8
+    t.string "bef0479_tpa_cd",               limit: 2
+    t.string "bef0479_secd_htlh_orgn_id",    limit: 4
+    t.string "bef0479_mdcr_prime_ind",       limit: 1
+    t.string "bef0479_mdcr_prime_bgn_dt",    limit: 8
+    t.string "bef0479_mdcr_prime_end_dt",    limit: 8
+    t.string "bef0479_phrmc_client_code",    limit: 8
+    t.string "bef0479_oth_ins_prime_ind",    limit: 1
+    t.string "bef0479_cob_ind",              limit: 1
+    t.string "bef0479_member_id",            limit: 10
+    t.string "bef0479_filler_3",             limit: 15
+  end
+
+  create_table "testing12", id: false, force: :cascade do |t|
+    t.string "empi",            limit: 255
+    t.string "local_member_id", limit: 255
+    t.string "first_name",      limit: 255
+    t.string "middle_name",     limit: 255
+    t.string "last_name",       limit: 255
+    t.string "gender",          limit: 255
+    t.date   "dob"
+    t.date   "dod"
+  end
+
+  create_table "testing_data", id: false, force: :cascade do |t|
+    t.string "pspn",    limit: 256
+    t.string "fcctr",   limit: 256
+    t.string "pcpflg",  limit: 256
+    t.string "pradd",   limit: 256
+    t.string "prctr",   limit: 256
+    t.string "prct",    limit: 256
+    t.string "fcst",    limit: 256
+    t.string "prntpid", limit: 256
+    t.string "prvln",   limit: 256
+    t.string "prlf",    limit: 256
+    t.string "przp",    limit: 256
+    t.string "acoid",   limit: 256
+    t.string "spctcd",  limit: 256
+    t.string "fczp",    limit: 256
+    t.string "pedt",    limit: 256
+    t.string "fcid",    limit: 256
+    t.string "prst",    limit: 256
+    t.string "prnpi",   limit: 256
+    t.string "rgid",    limit: 256
+    t.string "fcnpi",   limit: 256
+    t.string "prvfn",   limit: 256
+    t.string "rgnm",    limit: 256
+    t.string "pfflg",   limit: 256
+    t.string "fcct",    limit: 256
+    t.string "preml",   limit: 256
+    t.string "prcn",    limit: 256
+    t.string "fcnm",    limit: 256
+    t.string "aconm",   limit: 256
+    t.string "psdt",    limit: 256
+    t.string "orgnm",   limit: 256
+    t.string "pt",      limit: 256
+    t.string "orgid",   limit: 256
+    t.string "orgtin",  limit: 256
+    t.string "fcadd",   limit: 256
+  end
+
+  create_table "testingempi", id: false, force: :cascade do |t|
+    t.string   "empi",               limit: 255
+    t.string   "local_member_id",    limit: 255
+    t.string   "first_name",         limit: 255
+    t.string   "middle_name",        limit: 255
+    t.string   "last_name",          limit: 255
+    t.string   "gender",             limit: 255
+    t.date     "dob"
+    t.date     "dod"
+    t.string   "email",              limit: 255
+    t.string   "phone",              limit: 255
+    t.string   "street_add1",        limit: 255
+    t.string   "street_add2",        limit: 255
+    t.string   "city",               limit: 255
+    t.string   "zip",                limit: 255
+    t.string   "state",              limit: 255
+    t.string   "country",            limit: 255
+    t.string   "race",               limit: 255
+    t.string   "ethnicity",          limit: 255
+    t.string   "marital_status",     limit: 255
+    t.string   "insurance_no",       limit: 255
+    t.string   "insurance_name",     limit: 255
+    t.string   "group_insurance_no", limit: 255
+    t.string   "subscriber_name",    limit: 255
+    t.string   "subsciber_relation", limit: 255
+    t.datetime "author_date"
+    t.integer  "author_id"
+    t.string   "author_name",        limit: 255
+    t.string   "source_id",          limit: 255
+    t.string   "source_name",        limit: 255
+    t.string   "source_type",        limit: 255
+    t.string   "workflow_id",        limit: 255
+    t.string   "author",             limit: 255
+    t.string   "ingestion_datetime", limit: 255
+    t.string   "vendor_version",     limit: 255
+    t.string   "vendor_name",        limit: 255
+    t.string   "aco_id",             limit: 255
+    t.string   "aco_name",           limit: 255
+    t.string   "source_file_name",   limit: 255
+    t.string   "workspace_id",       limit: 255
+  end
+
+  create_table "testohfiles", id: false, force: :cascade do |t|
+    t.string "bef0479_alpha_trans_ind",      limit: 8
+    t.string "bef0479_enrl_cert_nbr",        limit: 9
+    t.string "bef0479_enrl_cert_sub",        limit: 1
+    t.string "bef0479_indiv_seq_nbr",        limit: 2
+    t.string "bef0479_xref_enrl_cert_nbr",   limit: 9
+    t.string "bef0479_xref_enrl_cert_sub",   limit: 1
+    t.string "bef0479_dpnt_irs_nbr",         limit: 9
+    t.string "bef0479_group_id_number",      limit: 8
+    t.string "bef0479_indiv_last_name_text", limit: 20
+    t.string "bef0479_indiv_1st_name_text",  limit: 14
+    t.string "bef0479_indiv_midl_intl_text", limit: 1
+    t.string "bef0479_indiv_qual_name_text", limit: 3
+    t.string "bef0479_indiv_address_text",   limit: 38
+    t.string "bef0479_indiv_address_text2",  limit: 30
+    t.string "bef0479_indiv_city_text",      limit: 20
+    t.string "bef0479_indiv_state_text",     limit: 2
+    t.string "bef0479_postal_loc_code",      limit: 9
+    t.string "bef0479_indiv_cntry_text",     limit: 10
+    t.string "bef0479_busn_unit_rptg_cd",    limit: 15
+    t.string "bef0479_email_id",             limit: 60
+    t.string "bef0479_grp_location_code",    limit: 3
+    t.string "bef0479_orig_work_date",       limit: 8
+    t.string "bef0479_mdcr_id",              limit: 12
+    t.string "bef0479_work_hrs_qty",         limit: 6
+    t.string "bef0479_work_status_cde",      limit: 2
+    t.string "bef0479_indiv_birth_date",     limit: 8
+    t.string "bef0479_indiv_sex_code",       limit: 1
+    t.string "bef0479_marital_status_code",  limit: 1
+    t.string "bef0479_dpnt_cur_status_cde",  limit: 2
+    t.string "bef0479_filler_1",             limit: 5
+    t.string "bef0479_empe_id_number",       limit: 12
+    t.string "bef0479_work_site_loc_cd",     limit: 15
+    t.string "bef0479_work_state_code",      limit: 2
+    t.string "bef0479_orig_hlth_bnfit_dt",   limit: 8
+    t.string "bef0479_clmt_birth_date",      limit: 8
+    t.string "bef0479_clmt_sex_cd",          limit: 1
+    t.string "bef0479_spcl_cust_txt",        limit: 15
+    t.string "bef0479_spcl_cust_txt2",       limit: 15
+    t.string "bef0479_spcl_cust_txt3",       limit: 15
+    t.string "bef0479_spcl_cust_txt4",       limit: 15
+    t.string "bef0479_spcl_cust_txt5",       limit: 15
+    t.string "bef0479_spcl_cust_txt6",       limit: 15
+    t.string "bef0479_spcl_cust_txt7",       limit: 15
+    t.string "bef0479_pol_cov_appl_ind",     limit: 1
+    t.string "bef0479_policy_id_number",     limit: 12
+    t.string "bef0479_line_desc_code",       limit: 1
+    t.string "bef0479_stat_class_code",      limit: 3
+    t.string "bef0479_oth_bnfit_amt",        limit: 9
+    t.string "bef0479_indiv_ins_eff_date",   limit: 8
+    t.string "bef0479_indiv_ins_exp_date",   limit: 8
+    t.string "bef0479_eff_change_date",      limit: 8
+    t.string "bef0479_sched_class_code",     limit: 3
+    t.string "bef0479_health_orgn_id_code",  limit: 4
+    t.string "bef0479_filler_2",             limit: 1
+    t.string "bef0479_indiv_eff_status_cde", limit: 2
+    t.string "bef0479_indiv_expir_stts_cde", limit: 2
+    t.string "bef0479_assgn_subscr_nbr",     limit: 8
+    t.string "bef0479_empe_ssn_nbr",         limit: 9
+    t.string "bef0479_id_card_value",        limit: 30
+    t.string "bef0479_print_control_code",   limit: 1
+    t.string "bef0479_dpnt_cur_status_date", limit: 8
+    t.string "bef0479_indiv_med_id_nbr",     limit: 9
+    t.string "bef0479_834_info_1",           limit: 9
+    t.string "bef0479_834_info_2",           limit: 30
+    t.string "bef0479_834_info_3",           limit: 8
+    t.string "bef0479_tpa_cd",               limit: 2
+    t.string "bef0479_secd_htlh_orgn_id",    limit: 4
+    t.string "bef0479_mdcr_prime_ind",       limit: 1
+    t.string "bef0479_mdcr_prime_bgn_dt",    limit: 8
+    t.string "bef0479_mdcr_prime_end_dt",    limit: 8
+    t.string "bef0479_phrmc_client_code",    limit: 8
+    t.string "bef0479_oth_ins_prime_ind",    limit: 1
+    t.string "bef0479_cob_ind",              limit: 1
+    t.string "bef0479_member_id",            limit: 10
+    t.string "bef0479_filler_3",             limit: 15
+  end
+
   create_table "value_sets", id: false, force: :cascade do |t|
     t.string "value_set_name",      limit: 65535
     t.string "value_set_oid",       limit: 65535
@@ -11931,6 +12942,21 @@ ActiveRecord::Schema.define(version: 20180919215440) do
     t.string "vrr",    limit: 65535
     t.string "vrl",    limit: 65535
     t.string "vrh",    limit: 65535
+  end
+
+  create_table "x_test", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.string  "name", limit: 10
+  end
+
+  create_table "x_test2", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.string  "name", limit: 10
+  end
+
+  create_table "xyz7", id: false, force: :cascade do |t|
+    t.integer "id"
+    t.string  "name", limit: 25
   end
 
 end
