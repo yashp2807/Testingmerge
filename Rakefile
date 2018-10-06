@@ -20,7 +20,7 @@ namespace :environment do
     config["staging"]["host"], config["production"]["host"] = host, host
 
     print ColorizedString["   Please enter the Customer or Team Name  (No space allowed):   "].colorize(:green)
-    customer_name = STDIN.gets.chomp
+    customer_name = STDIN.gets.chomp.downcase.delete("^a-zA-Z0-9")
     config["staging"]["database"], config["production"]["database"] = customer_name + "_staging", customer_name + "_production"
 
     print ColorizedString["   Please enter Database Port (Default: 5439):  "].colorize(:green)
