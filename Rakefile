@@ -35,7 +35,7 @@ namespace :environment do
     password = STDIN.gets.chomp
     config["development"]["password"], config["staging"]["password"], config["production"]["password"] = password, password, password
 
-    File.open("db/db_credentials.yml", 'w') { |file| file.write(config.to_yaml)}
+    File.open("db/config.yml", 'w') { |file| file.write(config.to_yaml)}
 
     puts "\n   Thank you for providing the credentials. You can reconfigure it by running #{ColorizedString["rake environment:prepare"].colorize(:blue)} again!"
     puts "   Now you can execute #{ColorizedString["RAKE_ENV=staging rake db:setup_redshift"].colorize(:blue)} to create the database and #{ColorizedString["RAKE_ENV=staging rake db:migrate"].colorize(:blue)} to migrate the schema."
@@ -50,9 +50,14 @@ namespace :db do
 
   task :setup_redshift do
     environment = ENV["RAKE_ENV"]
+    print ColorizedString["   Please provide the default Database name:  "].colorize(:green)
+    default_database = STDIN.gets.chomp
     config = YAML.load_file('db/config.yml')[environment]
-    @development = ActiveRecord::Base.establish_connection(config)
-    @development.connection.execute("create database if not exists #{config["database"]}")
+    default_config = YAML.load_file('db/config.yml')["development"]
+    default_config["database"] = default_database
+    @development = ActiveRecord::Base.establish_connection(default_config)
+    @development.connection.execute("create database #{config["database"]}")
+    puts "  Created Database #{ColorizedString["   Please provide the default Database name:  "].colorize(:green)}"
   end
 end
 
