@@ -2,7 +2,7 @@ development:
   adapter: redshift
   host: localhost
   port: 5439
-  database: ingestionmetrics
+  database: olapl2
   username: admin
   password: Innocycle123
   encoding: utf8
@@ -13,7 +13,7 @@ test: &test
   adapter: redshift
   host: platform-reboot
   port: 5439
-  database: ingestionmetrics
+  database: olapl2_test
   username: admin
   password: Innocycle123
   encoding: utf8
