@@ -38,7 +38,7 @@ namespace :environment do
     File.open("db/config.yml", 'w') { |file| file.write(config.to_yaml)}
 
     puts "\n   Thank you for providing the credentials. You can reconfigure it by running #{ColorizedString["rake environment:prepare"].colorize(:blue)} again!"
-    puts "   Now you can execute #{ColorizedString["rake db:setup_redshift"].colorize(:blue)} to create the database and #{ColorizedString["RAKE_ENV=staging rake db:migrate"].colorize(:blue)} to migrate the schema."
+    puts "   Now you can execute #{ColorizedString["rake db:setup_redshift"].colorize(:blue)} to create the database and #{ColorizedString["RAILS_ENV=staging rake db:migrate"].colorize(:blue)} to migrate the schema."
     puts "   For reference please find the available environments in the system #{ColorizedString["staging' and 'production'"].colorize(:green)}. \n\n"
     puts "\n-----------------------------------------------------------------------------------------------------------------------------\n"
 
