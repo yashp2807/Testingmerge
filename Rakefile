@@ -44,13 +44,22 @@ namespace :environment do
     username = Ask.input ColorizedString[" Please enter Database Username "].colorize(:yellow), default: "admin"
     config["staging"]["username"], config["production"]["username"] = username, username
 
-    print ColorizedString[" Please enter Database Password [****]:  "].colorize(:yellow)
-    password = STDIN.noecho(&:gets).chomp
+    password = password_config
+
     config["staging"]["password"], config["production"]["password"] = password, password
+
 
     File.open("db/config.yml", 'w') { |file| file.write(config.to_yaml)}
 
     puts "\n \n Thank you for providing the credentials. You can reconfigure it by running #{ColorizedString["rake environment:prepare"].colorize(:blue)} again! \n \n"
+  end
+
+  def password_config
+    print ColorizedString[" Please enter Database Password [****]:  "].colorize(:yellow)
+    password = STDIN.noecho(&:gets).chomp
+    puts "\n"
+    password_config if password.blank?
+    password
   end
 
   def terminal_msg
