@@ -9,10 +9,10 @@ StandaloneMigrations::Tasks.load_tasks
 namespace :environment do
   task :prepare do
     config = YAML.load_file("db/config.yml")
-    username = ColorizedString[Etc.getpwnam(Etc.getlogin).gecos.split(/,/).first].colorize(:blue)
+    username = ColorizedString[Etc.getpwnam(Etc.getlogin).gecos.split(/,/).first].colorize(:green)
     puts "\n-----------------------------------------------------------------------------------------------------------------------------\n\n"
-    puts "   Welcome #{username}! You are using #{ColorizedString[Socket.gethostname.strip].colorize(:blue)}."
-    puts "   Please enter the following details to prepare the Database migration. Press #{ColorizedString["Ctrl C"].colorize(:yellow)} to stop the configuration at anytime.\n\n"
+    puts "   Welcome #{username}! You are using #{ColorizedString[Socket.gethostname.strip].colorize(:green)}."
+    puts "   Please enter the following details to prepare the Database migration. Press #{ColorizedString["Ctrl C"].colorize(:green)} to stop the configuration at anytime.\n\n"
 
     print ColorizedString["   Please enter Database URL:  "].colorize(:yellow)
     host = STDIN.gets.chomp
@@ -36,17 +36,18 @@ namespace :environment do
 
     File.open("db/config.yml", 'w') { |file| file.write(config.to_yaml)}
 
-    puts "\n   Thank you for providing the credentials. You can reconfigure it by running #{ColorizedString["rake environment:prepare"].colorize(:yellow)} again!"
-    puts "   Now you can execute #{ColorizedString["rake db:setup_redshift"].colorize(:black ).colorize( :background => :green)} to create the database and #{ColorizedString["RAILS_ENV=staging rake db:migrate"].colorize(:black ).colorize( :background => :green)} to migrate the schema."
-    puts "   For reference please find the available environments in the system #{ColorizedString["staging' and 'production'"].colorize(:green)}. \n\n"
+    puts "\n   Thank you for providing the credentials. You can reconfigure it by running #{ColorizedString["rake environment:prepare"].colorize(:yellow)} again! \n \n"
+    puts "   You can now execute the following: \n"
+    puts "      Step 01: Create staging and production database: #{ColorizedString["rake db:setup_redshift"].colorize(:green)}"
+    puts "      Step 02: Migrate schema on staging environment #{ColorizedString["RAILS_ENV=staging rake db:migrate"].colorize(:green)}"
+    puts "      Step 03: Migrate schema on production environment #{ColorizedString["RAILS_ENV=production rake db:migrate"].colorize(:green )} \n \n"
+
+    puts "    For any queries please contact #{ColorizedString["yash.panchal@innovaccer.com"].colorize(:blue)}"
     puts "\n-----------------------------------------------------------------------------------------------------------------------------\n"
-
   end
-
 end
 
 namespace :db do
-
   task :setup_redshift do
     print ColorizedString["   Please provide the default Database name:  "].colorize(:green)
     default_database = STDIN.gets.chomp
