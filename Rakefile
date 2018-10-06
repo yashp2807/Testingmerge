@@ -55,7 +55,7 @@ namespace :environment do
   end
 
   def password_config
-    print ColorizedString[" Please enter Database Password [****]:  "].colorize(:yellow)
+    print ColorizedString[" Please enter Database Password [****]:  "].colorize(:green)
     password = STDIN.noecho(&:gets).chomp
     puts "\n"
     password_config if password.blank?
