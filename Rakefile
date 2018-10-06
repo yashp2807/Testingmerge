@@ -15,11 +15,11 @@ namespace :environment do
     puts "   Welcome #{username}! You are using #{ColorizedString[Socket.gethostname.strip].colorize(:green)}."
     puts "   Please enter the following details to prepare the Database migration. Press #{ColorizedString["Ctrl C"].colorize(:green)} to stop the configuration at anytime.\n\n"
 
-    print ColorizedString["   Please enter Database URL (No space):  "].colorize(:green)
+    print ColorizedString["   Please enter Database URL:  "].colorize(:green)
     host = STDIN.gets.chomp
     config["staging"]["host"], config["production"]["host"] = host, host
 
-    print ColorizedString["   Please enter the Customer or Team Name (Development Environment):   "].colorize(:green)
+    print ColorizedString["   Please enter the Customer or Team Name  (No space allowed):   "].colorize(:green)
     customer_name = STDIN.gets.chomp
     config["staging"]["database"], config["production"]["database"] = customer_name + "_staging", customer_name + "_production"
 
