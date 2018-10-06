@@ -15,7 +15,7 @@ namespace :environment do
     puts "   Welcome #{username}! You are using #{ColorizedString[Socket.gethostname.strip].colorize(:green)}."
     puts "   Please enter the following details to prepare the Database migration. Press #{ColorizedString["Ctrl C"].colorize(:green)} to stop the configuration at anytime.\n\n"
 
-    print ColorizedString["   Please enter Database URL:  "].colorize(:green)
+    print ColorizedString["   Please enter Database URL (No space):  "].colorize(:green)
     host = STDIN.gets.chomp
     config["staging"]["host"], config["production"]["host"] = host, host
 

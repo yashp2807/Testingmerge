@@ -1,30 +1,19 @@
-development:
+---
+staging:
   adapter: redshift
   host: localhost
   port: 5439
-  database: olapl2
+  database: Yash_staging
   username: admin
   password: Innocycle123
   encoding: utf8
   pool: 3
   timeout: 5000
-
-staging:
-  adapter: redshift
-  host: platform-reboot
-  port: 5439
-  database: olapl2_test
-  username: admin
-  password: Innocycle123
-  encoding: utf8
-  pool: 3
-  timeout: 5000
-
 production:
   adapter: redshift
-  host: platform-reboot
+  host: localhost
   port: 5439
-  database: olapl2_test
+  database: Yash_production
   username: admin
   password: Innocycle123
   encoding: utf8
