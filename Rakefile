@@ -2,7 +2,6 @@ require 'standalone_migrations'
 require 'pry'
 require 'etc'
 require 'socket'
-require 'colorize'
 require 'colorized_string'
 require 'yaml'
 StandaloneMigrations::Tasks.load_tasks
@@ -10,35 +9,35 @@ StandaloneMigrations::Tasks.load_tasks
 namespace :environment do
   task :prepare do
     config = YAML.load_file("db/config.yml")
-    username = ColorizedString[Etc.getpwnam(Etc.getlogin).gecos.split(/,/).first].colorize(:green)
+    username = ColorizedString[Etc.getpwnam(Etc.getlogin).gecos.split(/,/).first].colorize(:blue)
     puts "\n-----------------------------------------------------------------------------------------------------------------------------\n\n"
-    puts "   Welcome #{username}! You are using #{ColorizedString[Socket.gethostname.strip].colorize(:green)}."
-    puts "   Please enter the following details to prepare the Database migration. Press #{ColorizedString["Ctrl C"].colorize(:green)} to stop the configuration at anytime.\n\n"
+    puts "   Welcome #{username}! You are using #{ColorizedString[Socket.gethostname.strip].colorize(:blue)}."
+    puts "   Please enter the following details to prepare the Database migration. Press #{ColorizedString["Ctrl C"].colorize(:yellow)} to stop the configuration at anytime.\n\n"
 
-    print ColorizedString["   Please enter Database URL:  "].colorize(:green)
+    print ColorizedString["   Please enter Database URL:  "].colorize(:yellow)
     host = STDIN.gets.chomp
     config["staging"]["host"], config["production"]["host"] = host, host
 
-    print ColorizedString["   Please enter the Customer or Team Name  (No space allowed):   "].colorize(:green)
+    print ColorizedString["   Please enter the Customer or Team Name  (No space allowed):   "].colorize(:yellow)
     customer_name = STDIN.gets.chomp.downcase.delete("^a-zA-Z0-9")
     config["staging"]["database"], config["production"]["database"] = customer_name + "_staging", customer_name + "_production"
 
-    print ColorizedString["   Please enter Database Port (Default: 5439):  "].colorize(:green)
+    print ColorizedString["   Please enter Database Port (Default: 5439):  "].colorize(:yellow)
     port = STDIN.gets.chomp.presence || 5439
     config["staging"]["port"], config["production"]["port"] = port.to_i, port.to_i
 
-    print ColorizedString["   Please enter Database Username:  "].colorize(:green)
+    print ColorizedString["   Please enter Database Username:  "].colorize(:yellow)
     username = STDIN.gets.chomp
     config["staging"]["username"], config["production"]["username"] = username, username
 
-    print ColorizedString["   Please enter Database Password:  "].colorize(:green)
+    print ColorizedString["   Please enter Database Password:  "].colorize(:yellow)
     password = STDIN.gets.chomp
     config["staging"]["password"], config["production"]["password"] = password, password
 
     File.open("db/config.yml", 'w') { |file| file.write(config.to_yaml)}
 
-    puts "\n   Thank you for providing the credentials. You can reconfigure it by running #{ColorizedString["rake environment:prepare"].colorize(:blue)} again!"
-    puts "   Now you can execute #{ColorizedString["rake db:setup_redshift"].colorize(:blue)} to create the database and #{ColorizedString["RAILS_ENV=staging rake db:migrate"].colorize(:blue)} to migrate the schema."
+    puts "\n   Thank you for providing the credentials. You can reconfigure it by running #{ColorizedString["rake environment:prepare"].colorize(:yellow)} again!"
+    puts "   Now you can execute #{ColorizedString["rake db:setup_redshift"].colorize(:black ).colorize( :background => :green)} to create the database and #{ColorizedString["RAILS_ENV=staging rake db:migrate"].colorize(:black ).colorize( :background => :green)} to migrate the schema."
     puts "   For reference please find the available environments in the system #{ColorizedString["staging' and 'production'"].colorize(:green)}. \n\n"
     puts "\n-----------------------------------------------------------------------------------------------------------------------------\n"
 
@@ -58,7 +57,7 @@ namespace :db do
     @development = ActiveRecord::Base.establish_connection(default_config)
     @development.connection.execute("create database #{staging_config["database"]}")
     @development.connection.execute("create database #{production_config["database"]}")
-    puts "  Created Database for both staging and production: #{ColorizedString[staging_config["database"]].colorize(:green)} #{ColorizedString[production_config["database"]].colorize(:green)}"
+    puts "  Created Database for both staging and production: #{ColorizedString[staging_config["database"]].colorize(:green)} and #{ColorizedString[production_config["database"]].colorize(:green)}"
   end
 end
 
