@@ -32,7 +32,7 @@ namespace :environment do
     config = YAML.load_file("db/config.yml")
 
     customer_name = Ask.input ColorizedString[" Please enter the Customer or Team Name [Mercy/InData]:   "].colorize(:yellow), default: "InData"
-    config["staging"]["database"], config["production"]["database"], config["system"]["database"] = customer_name.downcase.gsub!(/[^0-9A-Za-z]/, '') + "_staging", customer_name.downcase.gsub!(/[^0-9A-Za-z]/, '') + "_production", customer_name.downcase.gsub!(/[^0-9A-Za-z]/, '') + "_system"
+    config["staging"]["database"], config["production"]["database"], config["system"]["database"] = customer_name.downcase.gsub(/[^0-9A-Za-z]/, '') + "_staging", customer_name.downcase.gsub(/[^0-9A-Za-z]/, '') + "_production", customer_name.downcase.gsub(/[^0-9A-Za-z]/, '') + "_system"
 
     host = Ask.input ColorizedString[" Please enter Data Warehouse Endpoint / Host URL [localhost]:  "].colorize(:yellow), default: "localhost"
     config["staging"]["host"], config["production"]["host"], config["system"]["host"], = host, host, host
