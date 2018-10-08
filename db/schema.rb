@@ -12,8 +12,4 @@
 
 ActiveRecord::Schema.define(version: 20181006082542) do
 
-  create_table "testtable", id: false, force: :cascade do |t|
-    t.integer "testcol"
-  end
-
 end
