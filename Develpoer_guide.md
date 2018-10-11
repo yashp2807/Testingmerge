@@ -27,51 +27,55 @@ Migration Tool has capability to provide enhancement by adding ad-hoc requiremen
 
 1. Add new column in any table: </br>
 
-> class Addcolumn < ActiveRecord::Migration[5.0] </br>
-  def up </br>
-    add_column :Table_name, :column_name, :[data type]</br>
-  end</br>
-  def down</br>
-    remove_column :Table_name, :column_name, :[data type]</br>
-  end</br>
-end</br>
+``` class Addcolumn < ActiveRecord::Migration[5.0] 
+  def up 
+    add_column :Table_name, :column_name, :[data type]
+  end
+  def down
+    remove_column :Table_name, :column_name, :[data type]
+  end
+end
+```
 
 2. Change column data type in any table:</br>
 
-> class ChangeDateColumnToDatetime < ActiveRecord::Migration[5.0]</br>
-  def up</br>
-    change_column :Table_name, :column_name, :[data type]</br>
-  end</br>
-  def down</br>
-    change_column :Table_name, :column_name, :[data type]</br>
-  end</br>
-end</br>
-
+``` class ChangeDateColumnToDatetime < ActiveRecord::Migration[5.0]
+  def up
+    change_column :Table_name, :column_name, :[data type]
+  end
+  def down
+    change_column :Table_name, :column_name, :[data type]
+  end
+end
+```
 3. Change column name of any table:</br>
 
-> class ChangeColumnName < ActiveRecord::Migration[5.0]</br>
-  def change</br>
-    rename_column :Table_name, :existing_column_name, :new_column_name</br>
-  end</br>
-end</br>
-
+``` class ChangeColumnName < ActiveRecord::Migration[5.0]
+  def change
+    rename_column :Table_name, :existing_column_name, :new_column_name
+  end
+end
+```
 4. Take snapshot of table and migrate data in different table:</br>
 
-> To create a snapshot</br>
-UNLOAD ('select * from <table_name>') TO 's3://<bucket_name>/<path_to_snapshot>/' </br>
-ACCESS_KEY_ID '<aws_access_key_id>' </br>
-SECRET_ACCESS_KEY '<aws_secret_access_key>' </br>
-DELIMITER ',' ADDQUOTES HEADER GZIP PARALLEL ON;</br>
-
-> To restore first run</br>
-TRUNCATE <table_name>;</br>
-
-> Then run</br>
-COPY <table_name> FROM 's3://<bucket_name>/<path_to_snapshot>/' </br>
-ACCESS_KEY_ID '<aws_access_key_id>' </br>
-SECRET_ACCESS_KEY '<aws_secret_access_key>' </br>
-IGNOREHEADER 1 </br>
-FORMAT as csv </br>
-QUOTE as '"' </br>
-DELIMITER as ',' GZIP;</br>
-
+``` 
+To create a snapshot
+UNLOAD ('select * from <table_name>') TO 's3://<bucket_name>/<path_to_snapshot>/' 
+ACCESS_KEY_ID '<aws_access_key_id>' 
+SECRET_ACCESS_KEY '<aws_secret_access_key>' 
+DELIMITER ',' ADDQUOTES HEADER GZIP PARALLEL ON;
+```
+```
+To restore first run
+TRUNCATE <table_name>;
+```
+```
+Then run
+COPY <table_name> FROM 's3://<bucket_name>/<path_to_snapshot>/' 
+ACCESS_KEY_ID '<aws_access_key_id>' 
+SECRET_ACCESS_KEY '<aws_secret_access_key>' 
+IGNOREHEADER 1 
+FORMAT as csv 
+QUOTE as '"' 
+DELIMITER as ',' GZIP;
+```
