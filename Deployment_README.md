@@ -47,6 +47,6 @@ Following steps would be useful to create and migrate new project.
 
        $ git tag peditatic-beta
 	   
-6. Install and execute migrations under project branch:</br>
+6. Install and execute migrations under project branch (After execution, script will execute the script and create tables for customer):</br>
 
-       $ sh start.sh (After execution, script will execute the script and create tables for customer)
+       $ sh start.sh 
