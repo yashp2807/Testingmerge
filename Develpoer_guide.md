@@ -1,10 +1,27 @@
 # Introduction
 
-Schema-Manager is developed to manage data model and provide versioning for each integration projects.To achieve this,It allows developers to 
-create new scripts as per the requirements coming under each projects.
+Schema-Manager is developed to manage data model and provide versioning for each integration projects.To achieve this,It allows developers to create new scripts as per the requirements coming under each projects.
 
-# Requirements
-This space contains ad-hoc requirements that might come to migrate project master schema or migrate data from one version to another.
+# Getting Started
+Migration Tool has capability to provide enhancement by adding ad-hoc requirements which might come to migrate project master schema or migrate data from one version to another. Following steps would be useful to create new migrtion specific to developer:
+
+1. Project Clone:</br> 
+   Execute following commands on terminal:</br>
+           
+       $ git clone https://github.com/innovaccer/Schema-Manager.git
+
+2. Install the dependencies:</br>
+
+       $ Cd schema manager && bundle install
+       $ To Handle postgres Exceptions : brew install postgres
+
+3. Checkout the latest GIT stable version of existing project:</br>
+
+       $ git checkout 2.0 (2.0 would be version)
+
+4. Create new migration script to fulfil custom requirement. (Please check below sample migration scripts)
+
+5. Push changes on project branch to complete.
 
 ## Sample Requirement scripts </br>
 
