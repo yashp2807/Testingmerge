@@ -1,6 +1,6 @@
 # Introduction
 
-Innovaccer requires centralised schema management to manage its centralised data model to provide the following benefits for schema governance, code driven schema management and pre-defined data management.
+Innovaccer requires centralised schema management to manage its centralised data schema and data migration to provide the following benefits for schema governance, code driven schema management and pre-defined data management.
 
 * Database agnostic (Should support multiple databases such as Redshift, Greenplum and Postgres for simple implementations)
 * Schema as a code
@@ -17,9 +17,12 @@ Innovaccer requires centralised schema management to manage its centralised data
 
 - Acccess to Redshift 
 - Ruby 2.3+ 
+- Git & Project source code access
 
 ## Getting Started
-Migration tool is built on top of Git and Ruby based schema management tool (Active record and Standalone migrations). The tool is been personalised for Innovaccer data stores by adding additional plugins for Redshift,Greenplum and other ER diagram tool.
+
+Migration tool is built on top of Git and Ruby based schema management tool (Active record and Standalone migrations). The tool is been personalised for Innovaccer data stores by adding additional plugins for Redshift, Greenplum, custom snippeter for backup and disaster recovery and other ER diagram tool.
+
 Following steps would be useful to create and migrate new project.
 
 1. Project Clone:</br> 
@@ -29,22 +32,21 @@ Following steps would be useful to create and migrate new project.
 
 2. Install the dependencies:</br>
 
-       $ Cd schema manager && bundle install
-       $ To Handle postgres Exceptions : brew install postgres
+       $ brew install postgres
+       $ cd schema manager && bundle install
 
 3. Checkout the latest GIT stable version:</br>
 
-       $ git checkout 2.0 (2.0 would be version)
+       $ git checkout beta (Current stable version)
 
-4. Create a project branch:</br>
+4. Create a project branch (Project Development):</br>
 
-       $ git branch pediatric-2.0	  
+       $ git branch pediatric-beta	  
 	   
-5. Release a project branch:</br>
+5. Release a project branch (Project Tag):</br>
 
-       $ git tag peditatic-2.0
+       $ git tag peditatic-beta
 	   
 6. Install and execute migrations under project branch:</br>
 
        $ sh start.sh (After execution, script will execute the script and create tables for customer)
-	   
