@@ -14,7 +14,6 @@ This space contains ad-hoc requirements that might come to migrate project maste
   def up </br>
     add_column :Table_name, :column_name, :[data type]</br>
   end</br>
-
   def down</br>
     remove_column :Table_name, :column_name, :[data type]</br>
   end</br>
@@ -26,7 +25,6 @@ end</br>
   def up</br>
     change_column :Table_name, :column_name, :[data type]</br>
   end</br>
-
   def down</br>
     change_column :Table_name, :column_name, :[data type]</br>
   end</br>
