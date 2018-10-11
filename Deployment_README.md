@@ -30,6 +30,7 @@ would be useful to create and migrate new project.
 2. Install the dependencies:</br>
 
        $ Cd schema manager && bundle install
+       $ To Handle postgres Exceptions : brew install postgres
 
 3. Checkout the latest GIT stable version:</br>
 
