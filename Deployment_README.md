@@ -19,6 +19,9 @@ Innovaccer requires centralised schema management to manage its centralised data
 - Ruby 2.3+ 
 
 ## Getting Started
+Migration tool is built on top of Git and Ruby based schema management tool (Active record and Standalone migrations). The tool is been personalised for Innovaccer data stores by adding additional plugins for Redshift and Greenplum and other ER diagram tool.Following steps 
+would be useful to create and migrate new project.
+
 1. Project Clone:</br> 
    Execute following commands on terminal:</br>
            
