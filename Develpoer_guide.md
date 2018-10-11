@@ -2,7 +2,7 @@
 
 Schema-Manager is developed to manage data model and provide versioning for each integration projects.To achieve this,It allows developers to create new scripts as per the requirements coming under each projects.
 
-# Getting Started
+## Getting Started
 Migration Tool has capability to provide enhancement by adding ad-hoc requirements which might come to migrate project master schema or migrate data from one version to another. Following steps would be useful to create new migrtion specific to developer:
 
 1. Project Clone:</br> 
