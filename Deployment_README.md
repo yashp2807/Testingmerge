@@ -8,9 +8,6 @@ Innovaccer requires centralised schema management to manage its centralised data
 * Release management 
 * Solution level forking and re-merging with the master schema versions 
 * Seed data generator
-* Random data generator 
-* Data migrations
-* Random data generator 
 * Data migrations
 
 # Pre-requisite 
