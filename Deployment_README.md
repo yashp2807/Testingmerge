@@ -15,6 +15,7 @@ Innovaccer requires centralised schema management to manage its centralised data
 - Acccess to Redshift 
 - Ruby 2.3+ 
 - Git & Project source code access
+- Xcode
 
 ## Getting Started
 
