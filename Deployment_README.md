@@ -31,9 +31,9 @@ Following steps would be useful to create and migrate new project.
 2. Install the dependencies:</br>
 
        $ sudo gem install bundler
-       $ cd Schema-Manager && bundle install
        $ brew install postgres (If brew is not installed: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
-
+       $ cd Schema-Manager && bundle install
+        
 3. Checkout the latest GIT stable version:</br>
 
        $ git checkout beta (Current stable version)
