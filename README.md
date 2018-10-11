@@ -48,19 +48,17 @@ Innovaccer requires centralised schema management to manage its centralised data
 5. Now we have defined database,schema for customer. It’s time to create create table scripts for l2 schema. </br>
    
    First create new ruby script by executing below command:</br>
-		> rake db:new_migration “name of table” </br>
-		“This will create empty ruby class under project”
-6.  Sample ruby script to create new table in defined schema.</br> 
-   (create_table ‘l2.member’ means table would get create under l2 schema.)
+    > rake db:new_migration “name of table” </br>
+      “This will create empty ruby class under project” 
 
 7.  Execute created script by executing below command: </br>
 
-  	> RAILS_ENV=staging rake db:migrate // RAILS_ENV = staging, It will create table in staging environment.
+    > RAILS_ENV=staging rake db:migrate // RAILS_ENV = staging, It will create table in staging environment.
 
 8.  Now create all level tables like step 6 and 7 steps.
 
 9.  Rails provide mechanism to rollback the execution to overcome any mistake. </br>
-    >	Command: RAILS_ENV=staging rake db:rollback  //It will rollback the latest changes. </br>
-		       RAILS_ENV=staging rake db:rollback STEP=3 //It will rollback upto last three changes.
+    > Command: RAILS_ENV=staging rake db:rollback  //It will rollback the latest changes. </br>
+	       RAILS_ENV=staging rake db:rollback STEP=3 //It will rollback upto last three changes.
 
     
