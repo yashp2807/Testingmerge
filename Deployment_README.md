@@ -23,6 +23,7 @@ Migration tool is built on top of Git and Ruby based schema management tool (Act
 Following steps would be useful to create and migrate new project.
 
 1. Install RVM and Ruby 2.5.1:</br> 
+
        $ rvm install 2.5
        $ rvm use 2.5 --default
 
