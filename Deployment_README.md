@@ -48,5 +48,5 @@ Following steps would be useful to create and migrate new project.
 	   
 6. Install and execute migrations under project branch (After execution, script will execute the script and create tables for customer):</br>
 
-       $ bundle
+       $ ARCHFLAGS="-arch x86_64" bundle install
        $ sh start.sh 
