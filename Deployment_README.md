@@ -25,6 +25,7 @@ Following steps would be useful to create and migrate new project.
 1. Install RVM and Ruby 2.5.1:</br> 
 
        $ curl -sSL https://get.rvm.io | bash
+       $ source /Users/i0495-macair/.rvm/scripts/rvm
        $ rvm install 2.5
        $ rvm use 2.5 --default
 
