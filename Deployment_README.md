@@ -36,16 +36,17 @@ Following steps would be useful to create and migrate new project.
         
 3. Checkout the latest GIT stable version:</br>
 
-       $ git checkout (Current stable version)
+       $ git checkout beta (Current stable version)
 
 4. Create a project branch (Project Development):</br>
 
-       $ git branch "Name of Branch" 
+       $ git branch pediatric-beta (pediatric-beta = Name of branch)
 	   
 5. Release a project branch (Project Tag):</br>
 
-       $ git tag "Name of Tag" 
+       $ git tag peditatic-beta (peditatic-beta = Name of branch)
 	   
 6. Install and execute migrations under project branch (After execution, script will execute the script and create tables for customer):</br>
 
+       $ bundle
        $ sh start.sh 
