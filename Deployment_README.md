@@ -38,6 +38,7 @@ Following steps would be useful to create and migrate new project.
 
        $ sudo gem install bundler
        $ brew install postgres (If brew is not installed: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)")
+       $ brew install mysql
        $ cd Schema-Manager && bundle install
         
 4. Checkout the latest GIT stable version:</br>
