@@ -32,7 +32,7 @@ Following steps would be useful to create and migrate new project.
 2. Project Clone:</br> 
    Execute following commands on terminal:</br>
            
-       $ git clone https://github.com/innovaccer/Schema-Manager.git
+       $ git clone https://github.com/innovaccer/Schema-Manager.git (use sudo if access is denied)
 
 3. Install the dependencies:</br>
 
