@@ -3,7 +3,7 @@ staging:
   adapter: redshift
   host: localhost
   port: 5439
-  database: uninet_staging
+  database: sfdd_staging
   username: admin
   password: Innocycle123
   encoding: utf8
@@ -13,7 +13,7 @@ production:
   adapter: redshift
   host: localhost
   port: 5439
-  database: uninet_production
+  database: sfdd_production
   username: admin
   password: Innocycle123
   encoding: utf8

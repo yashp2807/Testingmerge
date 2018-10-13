@@ -118,12 +118,12 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.integer  "author_id"
     t.integer  "payer_id"
     t.integer  "plan_id"
-    t.decimal  "allowed_amount",                          precision: 18, scale: 8
-    t.decimal  "total_claim_amount",                      precision: 18, scale: 8
-    t.decimal  "total_insurance_paid_amount",             precision: 18, scale: 8
-    t.decimal  "co_pay",                                  precision: 18, scale: 8
-    t.decimal  "deductible",                              precision: 18, scale: 8
-    t.decimal  "eligible_amount",                         precision: 18, scale: 8
+    t.decimal  "allowed_amount",                          precision: 18, scale: 2
+    t.decimal  "total_claim_amount",                      precision: 18, scale: 2
+    t.decimal  "total_insurance_paid_amount",             precision: 18, scale: 2
+    t.decimal  "co_pay",                                  precision: 18, scale: 2
+    t.decimal  "deductible",                              precision: 18, scale: 2
+    t.decimal  "eligible_amount",                         precision: 18, scale: 2
     t.bigint   "servicing_provider_npi"
     t.bigint   "attending_provider_npi"
     t.bigint   "other_provider_npi"
@@ -291,7 +291,7 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.datetime "ingestion_datetime"
     t.integer  "author_id"
     t.integer  "procedure_sequence_no"
-    t.decimal  "numeric_value",                     precision: 18, scale: 8
+    t.decimal  "numeric_value",                     precision: 18, scale: 2
     t.bigint   "provider_npi"
     t.bigint   "practice_npi"
   end
@@ -341,10 +341,10 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.integer  "author_id"
     t.integer  "payer_id"
     t.integer  "plan_id"
-    t.decimal  "allowed_amount",                          precision: 18, scale: 8
-    t.decimal  "total_claim_amount",                      precision: 18, scale: 8
-    t.decimal  "total_insurance_paid_amount",             precision: 18, scale: 8
-    t.decimal  "eligible_amount",                         precision: 18, scale: 8
+    t.decimal  "allowed_amount",                          precision: 18, scale: 2
+    t.decimal  "total_claim_amount",                      precision: 18, scale: 2
+    t.decimal  "total_insurance_paid_amount",             precision: 18, scale: 2
+    t.decimal  "eligible_amount",                         precision: 18, scale: 2
     t.bigint   "pharmacy_npi"
   end
 
@@ -558,9 +558,9 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.datetime "author_date"
     t.datetime "ingestion_datetime"
     t.datetime "vital_date"
-    t.decimal  "numeric_value",                   precision: 18, scale: 8
-    t.decimal  "reference_low",                   precision: 18, scale: 8
-    t.decimal  "reference_high",                  precision: 18, scale: 8
+    t.decimal  "numeric_value",                   precision: 18, scale: 2
+    t.decimal  "reference_low",                   precision: 18, scale: 2
+    t.decimal  "reference_high",                  precision: 18, scale: 2
     t.integer  "author_id"
     t.bigint   "provider_npi"
     t.bigint   "practice_npi"
