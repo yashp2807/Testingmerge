@@ -99,3 +99,6 @@ Step 6: Create new tag and push on the project branch
        $ git push origin <latest tag> # last release tag name
        
 ```Provide tag(created after step-6) to devops.```
+
+### Branch source code and latest tag of same branch would be on same state.
+
