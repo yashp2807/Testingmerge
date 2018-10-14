@@ -32,7 +32,7 @@ Step 7: Push tag to GIT
 
        $ git push origin <tag_name> # tag_name= New tag created on step 6.
 
-<p style='color:red'>Provide tag(created after step-7) to devops.</p>
+```Provide tag(created after step-7) to devops.```
 
 
 ## Existing Project Schema Change Management Steps:
@@ -65,7 +65,7 @@ Step 6: Create new tag and push on the project branch
        $ git tag -a <name of tag> -m “message” # ex: merV1.1
        $ git push origin <latest tag> # last release tag name
 
-<p style='color:red'>Provide tag(created after step-6) to devops.</p>
+```Provide tag(created after step-6) to devops.```
 
 
 ## Existing Product Schema Change Management Steps:
@@ -97,5 +97,5 @@ Step 6: Create new tag and push on the project branch
 
        $ git tag -a <name of tag> -m “message” # ex: prodV2.0
        $ git push origin <latest tag> # last release tag name
-
-<p style='color:red'>Provide tag(created after step-6) to devops.</p>
+       
+```Provide tag(created after step-6) to devops.```
