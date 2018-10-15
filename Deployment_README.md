@@ -47,7 +47,7 @@ Following steps would be useful to create and migrate new project.
         
 4. Checkout the latest GIT stable version:</br>
 
-       $ git checkout (Current stable version) # Take tag name from Schema Manager
+       $ git checkout beta # Current stable version 
 	   
 5. Install and execute migrations under project branch (After execution, script will execute the script and create tables for customer):</br>
 
