@@ -23,7 +23,7 @@ Step 5: Push project branch on GIT repo
 
        $ git push -u origin <branch name> 
 
-Step 6: Create tag(release) for project for devops
+Step 6: Create tag(release) for project
 
        $ git tag -a <name of tag> -m “message”
 	Naming convention of tag: “three character of project then V1.0 where 1= product number and 0=project number”, message: “<project_name> initial schema tag”
