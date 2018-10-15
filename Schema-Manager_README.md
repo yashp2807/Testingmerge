@@ -1,52 +1,62 @@
 # Schema-Manager Handbook
 
+Schema Manager leverages Git brancing and tagging for product and project releases. The policies are mentioned below: 	  
+
+- Product should have master as development branch and corresping release branches (beta, 1.0, 2.0)
+- Each project should have its own development branch and forked from any of the stable product release branches
+- Each project should release tags for releases (Projects can merge with any latest product and makes its own changes but release should only happen through tags) 
+- Devops team should always get a tag for any project from the data architect team for both initial and incremental implementations.
+
+
+### Flow chart
+
+- Git Master branch will be product development branch 
+   - Beta (Product release branches)
+   	- pediatric (branch- Forked from Beta) will be project branch
+	     - Pediatric_beta (Project tag for release)
+   - 1.0 (Product release branches) 
+   	- pediatric (merged with latest product branch) 
+	    - Pediatric_1.0 (Project tag for latest release)
+	   
+
 ## New Project Schema Creation Steps:
 
-Step 1: check the latest tag of master product branch </br>
+Step 1: check the latest stable product branch </br>
 
-       $ git checkout beta  # beta is product branch name </br>
-       $ git tag --contains # check list of tags and get latest one ex: prodV1.0	
+       $ git checkout beta  # beta is product latest stable branch 
 
-Step 2: Go to latest tag of product
 
-       $ git checkout prodV1.0 #prodV1.0 is latest product tag
+Step 2: Create new project branch (branch is created from latest tag of product)
 
-Step 3: Create new project branch (branch is created from latest tag of product)
+       $ git branch mercy # branch name = project name
 
-       $ git branch <branch name> # branch name = project name
-
-Step 4: Go to project branch
+Step 3: Go to project branch
 
        $ git checkout mercy # mercy = branch name
 
-Step 5: Push project branch on GIT repo
+Step 4: Push project branch on GIT repo
 
        $ git push -u origin <branch name> 
 
-Step 6: Create tag(release) for project
+Step 5: Create tag(release) for project
 
        $ git tag -a <name of tag> -m “message”
 	Naming convention of tag: “three character of project then V1.0 where 1= product number and 0=project number”, message: “<project_name> initial schema tag”
 
-Step 7: Push tag to GIT
+Step 6: Push tag to GIT and this can be used for releases
 
        $ git push origin <tag_name> # tag_name= New tag created on step 6.
 
-```Provide tag(created after step-7) to devops.```
+```Provide tag(created after step-6) to devops.```
 
 
-## Existing Project Schema Change Management Steps:
+## Existing Project Schema merge with latest:
 
 Step 1: Go to project branch
 
        $ git checkout <name of branch/project> 
 
-Step 2: Check all existing tags of branch
-
-       $ git describe --tags
-	To check latest tags: git tag --contains
-
-Step 3: Pull tag source code to local (sync local system with remote tag)
+Step 2: Pull tag source code to local (sync local system with remote tag)
 
        $ git pull origin <branch_name> # This will sync local with tag source code.
 
