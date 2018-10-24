@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181010065210) do
+ActiveRecord::Schema.define(version: 20181024102534) do
 
   create_table "attribution", id: false, force: :cascade do |t|
     t.string   "empi",                         limit: 255
@@ -124,17 +124,16 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.decimal  "co_pay",                                  precision: 18, scale: 2
     t.decimal  "deductible",                              precision: 18, scale: 2
     t.decimal  "eligible_amount",                         precision: 18, scale: 2
-    t.bigint   "servicing_provider_npi"
-    t.bigint   "attending_provider_npi"
-    t.bigint   "other_provider_npi"
-    t.bigint   "tax_id"
+    t.string   "servicing_provider_npi",      limit: 20
+    t.string   "attending_provider_npi",      limit: 20
+    t.string   "other_provider_npi",          limit: 20
+    t.string   "tax_id",                      limit: 20
   end
 
   create_table "claim_line", id: false, force: :cascade do |t|
     t.string   "empi",                       limit: 255
     t.string   "local_member_id",            limit: 255
     t.string   "claim_id",                   limit: 255
-    t.string   "claim_line_id",              limit: 255
     t.string   "procedure_code",             limit: 255
     t.string   "procedure_coding_system",    limit: 255
     t.string   "modifier_code_1",            limit: 255
@@ -147,8 +146,8 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.string   "servicing_provider",         limit: 255
     t.string   "attending_provider",         limit: 255
     t.string   "other_provider",             limit: 255
-    t.string   "line_claim_amount",          limit: 255
-    t.string   "line_insurance_paid_amount", limit: 255
+    t.decimal  "line_claim_amount",                      precision: 18, scale: 2
+    t.decimal  "line_insurance_paid_amount",             precision: 18, scale: 2
     t.string   "adjustment_status",          limit: 255
     t.string   "out_network_flag",           limit: 5
     t.string   "author_name",                limit: 255
@@ -169,13 +168,13 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.datetime "author_date"
     t.datetime "ingestion_datetime"
     t.integer  "author_id"
-    t.bigint   "servicing_provider_npi"
-    t.bigint   "attending_provider_npi"
-    t.bigint   "other_provider_npi"
+    t.string   "servicing_provider_npi",     limit: 20
+    t.string   "attending_provider_npi",     limit: 20
+    t.string   "other_provider_npi",         limit: 20
+    t.string   "claim_line_id",              limit: 100
   end
 
   create_table "diagnosis", id: false, force: :cascade do |t|
-    t.string   "empi",                  limit: 255
     t.string   "local_member_id",       limit: 255
     t.string   "encounter_id",          limit: 255
     t.string   "provider_name",         limit: 255
@@ -203,10 +202,11 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.date     "date_of_diagnosis"
     t.datetime "author_date"
     t.datetime "ingestion_datetime"
-    t.integer  "author_id"
-    t.integer  "diagnosis_sequence_no"
-    t.bigint   "provider_npi"
-    t.bigint   "practice_npi"
+    t.string   "provider_npi",          limit: 20
+    t.string   "practice_npi",          limit: 20
+    t.string   "diagnosis_sequence_no", limit: 100
+    t.string   "author_id",             limit: 200
+    t.integer  "empi"
   end
 
   create_table "encounter", id: false, force: :cascade do |t|
@@ -244,9 +244,9 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.datetime "encounter_end_date"
     t.datetime "ingestion_datetime"
     t.integer  "author_id"
-    t.bigint   "practice_npi"
-    t.bigint   "servicing_provider_npi"
-    t.bigint   "admitting_provider_npi"
+    t.string   "practice_npi",           limit: 20
+    t.string   "servicing_provider_npi", limit: 20
+    t.string   "admitting_provider_npi", limit: 20
   end
 
   create_table "lab_result", id: false, force: :cascade do |t|
@@ -292,8 +292,8 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.integer  "author_id"
     t.integer  "procedure_sequence_no"
     t.decimal  "numeric_value",                     precision: 18, scale: 2
-    t.bigint   "provider_npi"
-    t.bigint   "practice_npi"
+    t.string   "provider_npi",          limit: 20
+    t.string   "practice_npi",          limit: 20
   end
 
   create_table "pharmacy_claim", id: false, force: :cascade do |t|
@@ -345,7 +345,7 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.decimal  "total_claim_amount",                      precision: 18, scale: 2
     t.decimal  "total_insurance_paid_amount",             precision: 18, scale: 2
     t.decimal  "eligible_amount",                         precision: 18, scale: 2
-    t.bigint   "pharmacy_npi"
+    t.string   "pharmacy_npi",                limit: 20
   end
 
   create_table "prescription", id: false, force: :cascade do |t|
@@ -367,7 +367,7 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.string   "days_of_prescription",    limit: 255
     t.string   "route_of_administration", limit: 255
     t.string   "refills_remaining",       limit: 255
-    t.string   "dispensed_amount",        limit: 255
+    t.decimal  "dispensed_amount",                    precision: 18, scale: 2
     t.string   "no_of_refills",           limit: 255
     t.string   "date_recent_refill",      limit: 255
     t.string   "rx_form",                 limit: 255
@@ -390,8 +390,8 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.datetime "author_date"
     t.datetime "ingestion_datetime"
     t.integer  "author_id"
-    t.bigint   "provider_npi"
-    t.bigint   "practice_npi"
+    t.string   "provider_npi",            limit: 20
+    t.string   "practice_npi",            limit: 20
   end
 
   create_table "procedure", id: false, force: :cascade do |t|
@@ -431,8 +431,8 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.datetime "ingestion_datetime"
     t.integer  "author_id"
     t.integer  "procedure_sequence_no"
-    t.bigint   "provider_npi"
-    t.bigint   "practice_npi"
+    t.string   "provider_npi",          limit: 20
+    t.string   "practice_npi",          limit: 20
   end
 
   create_table "provider_org_hierarchy", id: false, force: :cascade do |t|
@@ -482,10 +482,10 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.integer  "custom_level1_id"
     t.integer  "custom_level2_id"
     t.integer  "custom_level3_id"
+    t.string   "provider_npi",            limit: 20
+    t.string   "practice_npi",            limit: 20
+    t.string   "org_tax_id",              limit: 20
     t.integer  "custom_level4_id"
-    t.bigint   "provider_npi"
-    t.bigint   "practice_npi"
-    t.bigint   "org_tax_id"
   end
 
   create_table "social_history", id: false, force: :cascade do |t|
@@ -523,8 +523,8 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.integer  "onset_month"
     t.integer  "offset_year"
     t.integer  "offset_month"
-    t.bigint   "provider_npi"
-    t.bigint   "practice_npi"
+    t.string   "provider_npi",       limit: 20
+    t.string   "practice_npi",       limit: 20
   end
 
   create_table "vital", id: false, force: :cascade do |t|
@@ -562,8 +562,8 @@ ActiveRecord::Schema.define(version: 20181010065210) do
     t.decimal  "reference_low",                   precision: 18, scale: 2
     t.decimal  "reference_high",                  precision: 18, scale: 2
     t.integer  "author_id"
-    t.bigint   "provider_npi"
-    t.bigint   "practice_npi"
+    t.string   "provider_npi",       limit: 20
+    t.string   "practice_npi",       limit: 20
   end
 
 end
