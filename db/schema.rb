@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181024102534) do
+ActiveRecord::Schema.define(version: 20181026104442) do
 
   create_table "attribution", id: false, force: :cascade do |t|
     t.string   "empi",                         limit: 255
