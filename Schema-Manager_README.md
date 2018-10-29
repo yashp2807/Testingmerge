@@ -11,17 +11,17 @@ Schema Manager leverages Git brancing and tagging for product and project releas
 ### Flow chart
 
 - Git Master branch will be product development branch 
-   - Beta (Product release branches)
-   	- pediatric (branch- Forked from Beta) will be project branch
+   - prd1.0 (Product release Tag)
+   	- pediatric (branch- Forked from Tag) will be project branch
 	     - Pediatric_beta (Project tag for release)
-   - 1.0 (Product release branches) 
-   	- pediatric (merged with latest product branch) 
+   - prd1.0 (Product release Tags) 
+   	- pediatric (merged with latest product Tag) 
 	    - Pediatric_1.0 (Project tag for latest release)
 	   
 
 ## New Project Schema Creation Steps:
 
-Step 1: check the latest stable product branch </br>
+Step 1: check the latest stable product Tag </br>
 
        $ git checkout beta  # beta is product latest stable branch 
 
