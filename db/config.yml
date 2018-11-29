@@ -3,7 +3,7 @@ staging:
   adapter: redshift
   host: localhost
   port: 5439
-  database: bbbb_staging
+  database: tesv15_staging
   username: admin
   password: Innocycle123
   encoding: utf8
@@ -13,7 +13,7 @@ production:
   adapter: redshift
   host: localhost
   port: 5439
-  database: bbbb_production
+  database: tesv15_production
   username: admin
   password: Innocycle123
   encoding: utf8
