@@ -3,7 +3,7 @@ staging:
   adapter: redshift
   host: localhost
   port: 5439
-  database: bbb_staging
+  database: vvvx_staging
   username: admin
   password: Innocycle123
   encoding: utf8
@@ -13,7 +13,7 @@ production:
   adapter: redshift
   host: localhost
   port: 5439
-  database: bbb_production
+  database: vvvx_production
   username: admin
   password: Innocycle123
   encoding: utf8
